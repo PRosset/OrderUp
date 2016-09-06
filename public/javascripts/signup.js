@@ -33,6 +33,9 @@ angular.module('myApp')
             <p class="help-block" ng-show="form.email.$error.required && $ctrl.submitted">
               What's your email address?
             </p>
+						<p class="help-block" ng-show="form.email.$error.email && $ctrl.submitted">
+              That email is already in use. 
+            </p>
             <p class="help-block" ng-show="form.email.$error.mongoose">
               {{ $ctrl.errors.email }}
             </p>
