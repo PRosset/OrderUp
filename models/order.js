@@ -4,7 +4,6 @@ var OrderSchema = new mongoose.Schema({
   completed:  { type: Boolean, required: true },
   items:    [ { type: mongoose.Schema.Types.ObjectId, ref: 'Item'} ],
   orderName:  { type: mongoose.Schema.Types.ObjectId, ref: 'User'},
-  restaurant: { type: mongoose.Schema.Types.ObjectId, ref: 'Restaurant'},
   },
   { timestamps: true }  // createdAt, updatedAt
 );
