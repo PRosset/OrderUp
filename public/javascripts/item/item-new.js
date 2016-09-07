@@ -1,7 +1,7 @@
 angular.module('myApp')
-.component('todoEdit', {
+.component('itemNew', {
   template: `
-    <h3>EDIT</h3>
+    <h3>NEW</h3>
 
     <form ng-submit="$ctrl.save()">
 
@@ -10,7 +10,7 @@ angular.module('myApp')
         <input type="text"
                class="form-control"
                name="title"
-               ng-model="$ctrl.todo.title">
+               ng-model="$ctrl.item.title">
       </div>
 
       <div class="form-group">
@@ -18,30 +18,24 @@ angular.module('myApp')
         <input type="checkbox"
                class="form-control"
                name="completed"
-               ng-model="$ctrl.todo.completed">
+               ng-model="$ctrl.item.completed">
       </div>
 
-      <a ng-click="$ctrl.show()" class="btn btn-primary">Back</a>
+      <a ui-sref="item" class="btn btn-primary">Back</a>
       <button type="submit" class="btn btn-success">Save</button>
     </form>
   `,
-  controller: function(todoService, $state, $stateParams) {
-    this.todo = null;
-
-    this.show = function() {
-      $state.go('todo-show', { id: this.todo._id });
+  controller: function(itemService, $state) {
+    this.item = {
+      title: '',
+      completed: false
     };
 
     this.save = function() {
-      todoService.update(this.todo)
+      itemService.create(this.item)
       .then( res => {
-        $state.go('todos');
+        $state.go('item');
       });
     };
-
-    todoService.getTodo($stateParams.id)
-    .then( res => {
-      this.todo = res.data;
-    });
   }
 });
