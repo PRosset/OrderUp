@@ -46,6 +46,7 @@ angular.module('myApp')
       currentUser = res.data;
     })
     .catch(err => {
+      console.log('AUTH - err.data:', err.data);
       console.log('ERROR:', err);
       return $q.reject(err.data);
     });

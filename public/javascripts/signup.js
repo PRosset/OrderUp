@@ -33,8 +33,8 @@ angular.module('myApp')
             <p class="help-block" ng-show="form.email.$error.required && $ctrl.submitted">
               What's your email address?
             </p>
-						<p class="help-block" ng-show="form.email.$error.email && $ctrl.submitted">
-              That email is already in use. 
+						<p class="help-block" ng-show="form.email.$error.reject && $ctrl.submitted">
+              That email is already in use.
             </p>
             <p class="help-block" ng-show="form.email.$error.mongoose">
               {{ $ctrl.errors.email }}
@@ -88,8 +88,7 @@ angular.module('myApp')
   controller: function(Auth, $state) {
     this.register = function(form) {
       this.submitted = true;
-			console.log(this);
-			
+
       if (form.$valid) {
         return Auth.createUser({
           name: this.user.name,
@@ -101,7 +100,9 @@ angular.module('myApp')
         	$state.go('todos');
         })
         .catch(err => {
+          console.log('SIGN UP - err.data:', err.data);
           err = err.data;
+          console.log('AFTER ASSIGNED:', err);
           errors = {};
           // Update validity of form fields that match the mongoose errors
           angular.forEach(err.errors, (error, field) => {
