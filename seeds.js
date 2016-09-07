@@ -39,35 +39,64 @@ Item.remove({})
   console.log('creating new users');
   let adele = new User();
   adele = {
-    local:  { email: 'hello@itsme.com', password: adele.encrypt('123') },
+    local:  {
+      email: 'hello@itsme.com',
+      password: adele.encrypt('123')
+    },
     firstName: 'Adele',
-    lastName: 'Adkins',
-    restaurants: []
+    lastName: 'Adkins'
   };
 
   let andre = new User();
   andre = {
-    local: { email: 'hey@ya.com', password: andre.encrypt('123') },
+    local: {
+      email: 'hey@ya.com',
+      password: andre.encrypt('123')
+    },
     firstName: 'Andre',
-    lastName: '3000',
-    restaurants: []
+    lastName: '3000'
   };
   console.log(adele);
   console.log(andre);
-  return [User.create(adele), User.create(andre)];
+  return User.create(adele, andre);
 })
 .then(function() {
+  return User.findOne({ "local.email" : "hello@itsme.com" });
+})
+.then(function(owner) {
   console.log('creating some new restaurants...');
-  var fellinis    = new Restaurant({ title: 'Fellinis' });
-    console.log(fellinis);
-    Restaurant.create([fellinis]);
-    quit();
-  }),
+  let fellinis = new Restaurant();
+  fellinis = {
+    title: 'Fellinis',
+    owner: owner._id
+  };
+  console.log(fellinis);
+  return Restaurant.create(fellinis);
+})
+.then(function(restaurant) {
+  let pizza = new Item();
+  pizza = {
+    title: "Pizza",
+    price: 6,
+    restaurant: restaurant._id
+  }
+  return Item.create(pizza);
+})
+.then(function() {
+  return Restaurant.findOne({ "title" : "Fellinis" })
+})
+.then(function() {
+  quit();
+}),
 // .then(function(restaurant) {
-//   var test = User.find({ "local.email" : "hello@itsme.com" });
-//   console.log(test)
-//   .then(function(adele) {
-//     adele.restaurants.push(restaurant._id);
+//   return User.findOne({ "local.email" : "hello@itsme.com" })
+//   .then(function(owner) {
+//     console.log("Before pushing:", owner);
+//     console.log("id:", restaurant._id);
+//     owner.restaurants.push(restaurant._id);
+//     console.log("After pushing:", owner);
+//     owner.save();
+//     quit();
 //   })
 // }),
 // .then(function(savedTodos) {

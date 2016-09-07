@@ -7,8 +7,7 @@ var UserSchema = new mongoose.Schema({
     password    : String
   },
   firstName   : { type: String, required: true },
-  lastName    : { type: String, required: true },
-  restaurants : [ {  type: mongoose.Schema.Types.ObjectId, ref: 'Restaurant' } ]
+  lastName    : { type: String, required: true }
 });
 
 UserSchema.methods.encrypt = function(password) {

@@ -1,11 +1,11 @@
 var mongoose = require('mongoose');
 
+var Item = require('./item.js');
+var User = require('./user.js');
+
 var RestaurantSchema = new mongoose.Schema({
     title:        { type: String,  required: true },
-    // address:      { type: String,  required: true },
-    // description:  { type: String,  required: true },
-    menu:       [ { type: mongoose.Schema.Types.ObjectId, ref: 'Item'  } ],
-    // orders:     [ { type: mongoose.Schema.Types.ObjectId, ref: 'Order' } ]
+    owner:        { type: mongoose.Schema.Types.ObjectId, ref: 'User' },
 });
 
 module.exports = mongoose.model('Restaurant', RestaurantSchema);
