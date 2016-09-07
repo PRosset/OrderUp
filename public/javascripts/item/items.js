@@ -1,7 +1,7 @@
 angular.module('myApp')
-.component('todos', {
+.component('items', {
   template: `
-    <h1>TODOs</h1>
+    <h1>Menu Items</h1>
     <div class="todos" ng-repeat = "todo in $ctrl.todos">
       <span ng-show="todo.completed" ng-click="$ctrl.toggle(todo)" class="glyphicon glyphicon-ok" aria-hidden="true"></span>
       <span ng-hide="todo.completed" ng-click="$ctrl.toggle(todo)" class="glyphicon glyphicon-unchecked" aria-hidden="true"></span>
@@ -11,33 +11,33 @@ angular.module('myApp')
     <hr/>
     <a ui-sref="todo-new" class="btn btn-primary">New</a>
   `,
-  controller: function(todoService, $state) {
-    this.todos = null;
+  controller: function(itemService, $state) {
+    this.items = null;
 
-    this.getTodos = function() {
-      todoService.getTodos()
+    this.getItems = function() {
+      itemService.getItems()
       .then( res => {
-        this.todos = res.data;
+        this.items = res.data;
       });
     };
 
-    this.getTodos();
+    this.getItems();
 
-    this.show = function(todo) {
-      $state.go('todo-show', { id: todo._id });
+    this.show = function(item) {
+      $state.go('item-show', { id: item._id });
     };
 
-    this.toggle = function(todo) {
-      todoService.toggle(todo)
+    this.toggle = function(item) {
+      itemService.toggle(item)
       .then( res => {
-        this.getTodos();
+        this.getItems();
       });
     };
 
-    this.delete = function(todo) {
-      todoService.delete(todo)
+    this.delete = function(item) {
+      itemService.delete(item)
       .then( res => {
-        this.getTodos();
+        this.getItems();
       });
     };
   }
