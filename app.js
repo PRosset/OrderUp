@@ -13,7 +13,7 @@ var session = require('express-session');
 // Routes
 var usersRouter = require('./routes/users');
 var restaurantRouter = require('./routes/restaurant');
-var itemRouter = require('./routes/item');
+var itemRouter = require('./routes/items');
 var orderRouter = require('./routes/order');
 
 var app = express();

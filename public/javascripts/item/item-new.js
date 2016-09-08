@@ -14,6 +14,14 @@ angular.module('myApp')
       </div>
 
       <div class="form-group">
+        <label for="title">Price</label>
+        <input type="number"
+               class="form-control"
+               name="price"
+               ng-model="$ctrl.item.price">
+      </div>
+
+      <div class="form-group">
         <label for="completed">Completed</label>
         <input type="checkbox"
                class="form-control"
@@ -21,7 +29,7 @@ angular.module('myApp')
                ng-model="$ctrl.item.completed">
       </div>
 
-      <a ui-sref="item" class="btn btn-primary">Back</a>
+      <a ui-sref="items" class="btn btn-primary">Back</a>
       <button type="submit" class="btn btn-success">Save</button>
     </form>
   `,
@@ -34,7 +42,7 @@ angular.module('myApp')
     this.save = function() {
       itemService.create(this.item)
       .then( res => {
-        $state.go('item');
+        $state.go('items');
       });
     };
   }
