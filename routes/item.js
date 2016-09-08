@@ -33,9 +33,9 @@ router.get('/', authenticate, function(req, res, next) {
 router.post('/', authenticate, function(req, res, next) {
   var item = new Item({
     title: req.body.title,
-    price: req.body.price,
-    completed: req.body.completed ? true : false,
-    user: req.user
+    price: req.body.price
+    // completed: req.body.completed ? true : false
+    // restaurant:
   });
   item.save()
   .then(function(saved) {

@@ -21,14 +21,6 @@ angular.module('myApp')
                ng-model="$ctrl.item.price">
       </div>
 
-      <div class="form-group">
-        <label for="completed">Completed</label>
-        <input type="checkbox"
-               class="form-control"
-               name="completed"
-               ng-model="$ctrl.item.completed">
-      </div>
-
       <a ui-sref="items" class="btn btn-primary">Back</a>
       <button type="submit" class="btn btn-success">Save</button>
     </form>
@@ -36,7 +28,8 @@ angular.module('myApp')
   controller: function(itemService, $state) {
     this.item = {
       title: '',
-      completed: false
+      price: ''
+      // completed: false
     };
 
     this.save = function() {
@@ -47,3 +40,11 @@ angular.module('myApp')
     };
   }
 });
+
+      // <div class="form-group">
+      //   <label for="completed">Completed</label>
+      //   <input type="checkbox"
+      //          class="form-control"
+      //          name="completed"
+      //          ng-model="$ctrl.item.completed">
+      // </div>
