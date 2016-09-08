@@ -12,9 +12,16 @@ var session = require('express-session');
 
 // Routes
 var usersRouter = require('./routes/users');
+<<<<<<< HEAD
 var restaurantRouter = require('./routes/restaurant');
 var itemRouter = require('./routes/item');
 var orderRouter = require('./routes/order');
+=======
+var itemsRouter = require('./routes/items');
+var restaurantRouter = require('./routes/restaurant');
+
+var todosRouter = require('./routes/todos');
+>>>>>>> refactor
 
 var app = express();
 
@@ -45,9 +52,9 @@ require('./config/passport/passport')(passport);
 app.use(express.static(path.join(__dirname, 'public')));
 app.use('/', homeRouter);
 app.use('/users', usersRouter);
-app.use('/item', itemRouter);
-app.use('/order', orderRouter);
-app.use('/restaurant', restaurantRouter);
+app.use('/todos', todosRouter);
+app.use('/items', itemsRouter);
+app.use('/restaurants', restaurantRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
