@@ -21,12 +21,32 @@ angular.module('myApp')
             <input type="password" name="password" class="form-control" ng-model="$ctrl.user.password" required>
           </div>
 
+          <div class="form-group">
+            <label>First Name</label>
+
+            <input type="text" name="firstName" class="form-control" ng-model="$ctrl.user.firstName" required>
+          </div>
+
+          <div class="form-group">
+            <label>Last Name</label>
+
+            <input type="text" name="lastName" class="form-control" ng-model="$ctrl.user.lastName" required>
+          </div>
+
           <div class="form-group has-error">
             <p class="help-block" ng-show="form.email.$error.required && form.password.$error.required && $ctrl.submitted">
                Please enter your email and password.
             </p>
             <p class="help-block" ng-show="form.email.$error.email && $ctrl.submitted">
                Please enter a valid email.
+            </p>
+
+            <p class="help-block" ng-show="form.firstName.$error.required && $ctrl.submitted">
+               Please enter your first name.
+            </p>
+
+            <p class="help-block" ng-show="form.lastName.$error.required && $ctrl.submitted">
+               Please enter your last name.
             </p>
 
             <p class="help-block">{{ $ctrl.errors.login }}</p>
@@ -55,11 +75,13 @@ angular.module('myApp')
       if (form.$valid) {
         Auth.login({
           email: this.user.email,
-          password: this.user.password
+          password: this.user.password,
+          firstName: this.user.firstName,
+          lastName: this.user.lastName
         })
         .then(() => {
           // Logged in, redirect to todos
-          $state.go('todos');
+          $state.go('restaurants');
         })
         .catch(err => {
           this.errors.login = err.message;
