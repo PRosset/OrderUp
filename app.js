@@ -11,17 +11,12 @@ var passport = require('passport');
 var session = require('express-session');
 
 // Routes
+var homeRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
-<<<<<<< HEAD
-var restaurantRouter = require('./routes/restaurant');
-var itemRouter = require('./routes/item');
-var orderRouter = require('./routes/order');
-=======
 var itemsRouter = require('./routes/items');
 var restaurantRouter = require('./routes/restaurant');
 
 var todosRouter = require('./routes/todos');
->>>>>>> refactor
 
 var app = express();
 

@@ -59,7 +59,7 @@ angular.module('myApp')
         })
         .then(() => {
           // Logged in, redirect to todos
-          $state.go('todos');
+          $state.go('restaurants');
         })
         .catch(err => {
           this.errors.login = err.message;
