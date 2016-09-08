@@ -64,7 +64,7 @@ angular.module('myApp')
             <label>First Name</label>
 
             <input type="text" name="firstName" class="form-control" ng-model="$ctrl.user.firstName"
-                   />
+                   required />
             <p class="help-block" ng-show="form.firstName.$error.required && $ctrl.submitted">
               A first name is required
             </p>
@@ -75,7 +75,7 @@ angular.module('myApp')
             <label>Last Name</label>
 
             <input type="text" name="lastName" class="form-control" ng-model="$ctrl.user.lastName"
-                   />
+                   required />
             <p class="help-block" ng-show="form.lastName.$error.required && $ctrl.submitted">
               A last name is required
             </p>
@@ -103,9 +103,9 @@ angular.module('myApp')
       if (form.$valid) {
         return Auth.createUser({
           email: this.user.email,
-          password: this.user.password
-          // firstName: this.user.firstName,
-          // lastName: this.user.lastName
+          password: this.user.password,
+          firstName: this.user.firstName,
+          lastName: this.user.lastName
         })
         .then(() => {
           // Account created, redirect to restaurants
