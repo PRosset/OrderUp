@@ -1,7 +1,7 @@
 var mongoose = require('mongoose');
 
-var User = require('./user.js');
-var Item = require('./item.js');
+// var User = require('./user.js');
+// var Item = require('./item.js');
 
 var OrderSchema = new mongoose.Schema({
   completed:  { type: Boolean, required: true },

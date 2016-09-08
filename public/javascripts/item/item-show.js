@@ -3,6 +3,7 @@ angular.module('myApp')
   template: `
     <h3>SHOW</h3>
     <p><b>Title: </b>{{ $ctrl.item.title }}</p>
+    <p><b>Price: </b>{{ $ctrl.item.price }}</p>
     <p><b>ID: </b>{{ $ctrl.item._id }}</p>
     <p><b>Completed: </b>
       <span ng-show="$ctrl.item.completed" class="glyphicon glyphicon-ok" aria-hidden="true"></span>

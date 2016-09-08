@@ -24,21 +24,36 @@ angular.module('myApp')
     url: "/signup",
     template: "<signup></signup>"
   })
-  .state('todos', {
-    url: "/todos",
-    template: "<todos></todos>"
+  // .state('restaurants', {
+  //   url: "/restaurants",
+  //   template: "<restaurants></restaurants>"
+  // })
+  // .state('restaurant-new', {
+  //   url: "/restaurants/new",
+  //   template: "<restaurant-new></restaurant-new>"
+  // })
+  // .state('restaurant-show', {
+  //   url: "/restaurants/:id",
+  //   template: "<restaurant-show></restaurant-show>"
+  // })
+  // .state('restaurant-edit', {
+  //   url: "/restaurants/edit/:id",
+  //   template: "<restaurant-edit></restaurant-edit>"
+  // })
+  .state('items', {
+    url: "/items",
+    template: "<items></items>"
   })
-  .state('todo-new', {
-    url: "/todos/new",
-    template: "<todo-new></todo-new>"
+  .state('item-new', {
+    url: "/items/new",
+    template: "<item-new></item-new>"
   })
-  .state('todo-show', {
-    url: "/todos/:id",
-    template: "<todo-show></todo-show>"
+  .state('item-show', {
+    url: "/items/:id",
+    template: "<item-show></item-show>"
   })
-  .state('todo-edit', {
-    url: "/todos/edit/:id",
-    template: "<todo-edit></todo-edit>"
+  .state('item-edit', {
+    url: "/items/edit/:id",
+    template: "<item-edit</item-edit>"
   });
-
 });

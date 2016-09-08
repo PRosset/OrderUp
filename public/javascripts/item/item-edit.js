@@ -14,6 +14,14 @@ angular.module('myApp')
       </div>
 
       <div class="form-group">
+        <label for="title">Price</label>
+        <input type="number"
+               class="form-control"
+               name="price"
+               ng-model="$ctrl.item.price">
+      </div>
+
+      <div class="form-group">
         <label for="completed">Completed</label>
         <input type="checkbox"
                class="form-control"

@@ -9,17 +9,6 @@ angular.module('myApp')
       <div class="col-sm-12">
         <form class="form" name="form" ng-submit="$ctrl.register(form)" novalidate>
 
-          <div class="form-group" ng-class="{ 'has-success': form.name.$valid && $ctrl.submitted,
-                                              'has-error': form.name.$invalid && $ctrl.submitted }">
-            <label>Name</label>
-
-            <input type="text" name="name" class="form-control" ng-model="$ctrl.user.name"
-                   required/>
-            <p class="help-block" ng-show="form.name.$error.required && $ctrl.submitted">
-              A name is required
-            </p>
-          </div>
-
           <div class="form-group" ng-class="{ 'has-success': form.email.$valid && $ctrl.submitted,
                                               'has-error': form.email.$invalid && $ctrl.submitted }">
             <label>Email</label>
@@ -70,6 +59,28 @@ angular.module('myApp')
             </p>
           </div>
 
+          <div class="form-group" ng-class="{ 'has-success': form.firstName.$valid && $ctrl.submitted,
+                                              'has-error': form.firstName.$invalid && $ctrl.submitted }">
+            <label>First Name</label>
+
+            <input type="text" name="firstName" class="form-control" ng-model="$ctrl.user.firstName"
+                   required />
+            <p class="help-block" ng-show="form.firstName.$error.required && $ctrl.submitted">
+              A first name is required
+            </p>
+          </div>
+
+          <div class="form-group" ng-class="{ 'has-success': form.lastName.$valid && $ctrl.submitted,
+                                              'has-error': form.lastName.$invalid && $ctrl.submitted }">
+            <label>Last Name</label>
+
+            <input type="text" name="lastName" class="form-control" ng-model="$ctrl.user.lastName"
+                   required />
+            <p class="help-block" ng-show="form.lastName.$error.required && $ctrl.submitted">
+              A last name is required
+            </p>
+          </div>
+
           <div>
             <button class="btn btn-inverse btn-lg btn-register" type="submit">
               Sign up
@@ -91,13 +102,14 @@ angular.module('myApp')
 
       if (form.$valid) {
         return Auth.createUser({
-          name: this.user.name,
           email: this.user.email,
-          password: this.user.password
+          password: this.user.password,
+          firstName: this.user.firstName,
+          lastName: this.user.lastName
         })
         .then(() => {
-          // Account created, redirect to todos
-        	$state.go('todos');
+          // Account created, redirect to restaurants
+        	$state.go('home');
         })
         .catch(err => {
           console.log('SIGN UP - err.data:', err.data);
