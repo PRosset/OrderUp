@@ -41,9 +41,11 @@ angular.module('myApp')
   };
 
   this.createUser = function(user) {
+    console.log(user);
     return $http.post('/signup', user)
     .then(res => {
       currentUser = res.data;
+      console.log(currentUser);
     })
     .catch(err => {
       console.log('AUTH - err.data:', err.data);

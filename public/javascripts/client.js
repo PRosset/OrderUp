@@ -24,6 +24,27 @@ angular.module('myApp')
     url: "/signup",
     template: "<signup></signup>"
   })
+  .state('items', {
+    url: "/items",
+    template: "<items></items>"
+  })
+  .state('item-new', {
+    url: "/items/new",
+    template: "<item-new></item-new>"
+  })
+  .state('item-show', {
+    url: "/items/:id",
+    template: "<item-show></item-show>"
+  })
+  .state('item-edit', {
+    url: "/items/edit/:id",
+    template: "<item-edit></item-edit>"
+  })
+  .state('restaurants', {
+    url: "/restaurants",
+    template: "<restaurants></restaurants>"
+  })
+
   .state('todos', {
     url: "/todos",
     template: "<todos></todos>"
