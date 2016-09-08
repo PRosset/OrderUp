@@ -44,6 +44,19 @@ angular.module('myApp')
     url: "/restaurants",
     template: "<restaurants></restaurants>"
   })
+  .state('restaurant-new', {
+    url: "/restaurants/new",
+    template: "<restaurant-new></restaurant-new>"
+  })
+  .state('restaurant-show', {
+    url: "/restaurants/:id",
+    template: "<restaurant-show></restaurant-show>"
+  })
+  .state('restaurant-edit', {
+    url: "/restaurants/edit/:id",
+    template: "<restaurant-edit></restaurant-edit>"
+  })
+
 
   .state('todos', {
     url: "/todos",

@@ -3,7 +3,7 @@ angular.module('myApp')
   template: `
     <h1>RESTAURANTS</h1>
     <div class="restaurants" ng-repeat = "restaurant in $ctrl.restaurants">
-      <h3 ng-click="$ctrl.show(restaurant)">{{ restaurant.title }}</h3>
+      <p ng-click="$ctrl.show(restaurant)">{{ restaurant.title }}</p>
       <button ng-click="$ctrl.delete(restaurant)" class="btn btn-xs btn-danger">X</button>
     </div>
     <hr/>
@@ -23,13 +23,6 @@ angular.module('myApp')
 
     this.show = function(restaurant) {
       $state.go('restaurant-show', { id: restaurant._id });
-    };
-
-    this.toggle = function(restaurant) {
-      restaurantService.toggle(restaurant)
-      .then( res => {
-        this.getRestaurants();
-      });
     };
 
     this.delete = function(restaurant) {
