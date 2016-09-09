@@ -7,7 +7,7 @@ angular.module('myApp')
 
     <div class="items" ng-repeat="item in $ctrl.restaurantInfo.items">
       <a ng-click="$ctrl.show(item)">{{ item.title }}</a>
-      <button ng-click="$ctrl.delete(item)" class="btn btn-xs btn-danger">X</button>
+      <button ng-if="{{currentUser._id === $ctrl.restaurantInfo.restaurant.owner}}" ng-click="$ctrl.delete(item)" class="btn btn-xs btn-danger">X</button>
     </div>
 
     <a ui-sref="restaurants" class="btn btn-primary">Back</a>
