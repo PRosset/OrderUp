@@ -54,8 +54,8 @@ router.get('/:id', authenticate, function(req, res, next) {
     Item.find({"restaurant" : restaurant._id})
     .then(function(items) {
       console.log(items);
-      // restaurantInfo = { items, restaurant };
-      res.json(items);
+      var restaurantInfo = { items, restaurant };
+      res.json(restaurantInfo);
     })
   }, function(err) {
     return next(err);

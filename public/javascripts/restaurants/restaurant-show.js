@@ -2,10 +2,10 @@ angular.module('myApp')
 .component('restaurantShow', {
   template: `
     <h3>SHOW</h3>
-    <p><b>Title: </b>{{ $ctrl.restaurant.title }}</p>
-    <p><b>ID: </b>{{ $ctrl.restaurant._id }}</p>
+    <p><b>Title: </b>{{ $ctrl.restaurantInfo.restaurant.title }}</p>
+    <p><b>ID: </b>{{ $ctrl.restaurantInfo.restaurant._id }}</p>
 
-    <div class="items" ng-repeat="item in $ctrl.items">
+    <div class="items" ng-repeat="item in $ctrl.restaurantInfo.items">
       <a ng-click="$ctrl.show(item)">{{ item.title }}</a>
       <button ng-click="$ctrl.delete(item)" class="btn btn-xs btn-danger">X</button>
     </div>
@@ -18,16 +18,18 @@ angular.module('myApp')
     this.restaurant = null;
 
     this.edit = function() {
-      $state.go('restaurant-edit', { id: this.restaurant._id });
+      $state.go('restaurant-edit', { id: this.restaurantInfo.restaurant._id });
     };
 
     this.newItem = function() {
-      $state.go('item-new2', { id: this.restaurant._id });
+      $state.go('item-new2', { id: this.restaurantInfo.restaurant._id });
     };
 
     restaurantService.getRestaurant($stateParams.id)
     .then( res => {
-      this.items = res.data;
+      this.restaurantInfo = res.data;
     });
   }
 });
+
+// object.restaurant
