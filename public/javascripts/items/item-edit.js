@@ -21,7 +21,14 @@ angular.module('myApp')
                ng-model="$ctrl.item.price">
       </div>
 
-
+      <div class="form-group">
+        <label for="title">Category</label>
+            <select type="text"
+               class="form-control"
+               name="categories">
+              <option ng-repeat="x in $ctrl.categories">{{x}}</option>
+            </select>
+      </div>
 
       <a ng-click="$ctrl.show()" class="btn btn-primary">Back</a>
       <button type="submit" class="btn btn-success">Save</button>
@@ -29,6 +36,7 @@ angular.module('myApp')
   `,
   controller: function(itemService, $state, $stateParams) {
     this.item = null;
+    this.categories = ['Appetizer', 'Entree', 'Sides', 'Desserts', 'Drinks'];
 
     this.show = function() {
       $state.go('item-show', { id: this.item._id });

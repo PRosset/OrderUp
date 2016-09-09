@@ -2,7 +2,6 @@ angular.module('myApp')
 .component('itemNew', {
   template: `
     <h3>NEW MENU ITEM</h3>
-    <h4> RESTAURANT ID: </h4>
     <form ng-submit="$ctrl.save()">
       <div class="form-group">
         <label for="title">Title</label>
@@ -20,11 +19,22 @@ angular.module('myApp')
                ng-model="$ctrl.item.price">
       </div>
 
+      <div class="form-group">
+        <label for="title">Category</label>
+            <select type="text"
+               class="form-control"
+               name="categories">
+              <option ng-repeat="x in $ctrl.categories">{{x}}</option>
+            </select>
+      </div>
+
       <a ui-sref="items" class="btn btn-primary">Back</a>
       <button type="submit" class="btn btn-success">Save</button>
     </form>
   `,
   controller: function(itemService, $state) {
+    this.categories = ['Appetizer', 'Entree', 'Sides', 'Desserts', 'Drinks'];
+
     this.item = {
       title: '',
       price: '',

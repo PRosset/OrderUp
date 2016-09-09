@@ -13,7 +13,6 @@ angular.module('myApp')
           <ul class="nav navbar-nav">
             <li ng-class="{ active: $ctrl.$state.includes('home') }" ><a ui-sref="home">Home</a></li>
             <li ng-class="{ active: $ctrl.$state.includes('about') }" ><a ui-sref="about">About</a></li>
-            <li ng-show="$ctrl.Auth.isLoggedIn()" ng-class="{ active: $ctrl.$state.includes('items') }" ><a ui-sref="items">Items</a></li>
             <li ng-show="$ctrl.Auth.isLoggedIn()" ng-class="{ active: $ctrl.$state.includes('restaurants') }" ><a ui-sref="restaurants">Restaurants</a></li>
           </ul>
           <ul class="nav navbar-nav navbar-right">
