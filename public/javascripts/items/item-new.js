@@ -1,10 +1,9 @@
 angular.module('myApp')
 .component('itemNew', {
   template: `
-    <h3>NEW</h3>
-
+    <h3>NEW MENU ITEM</h3>
+    <h4> RESTAURANT ID: </h4>
     <form ng-submit="$ctrl.save()">
-
       <div class="form-group">
         <label for="title">Title</label>
         <input type="text"
@@ -15,7 +14,7 @@ angular.module('myApp')
 
       <div class="form-group">
         <label for="title">Price</label>
-        <input type="number"
+        <input type="text"
                class="form-control"
                name="price"
                ng-model="$ctrl.item.price">
@@ -28,8 +27,8 @@ angular.module('myApp')
   controller: function(itemService, $state) {
     this.item = {
       title: '',
-      price: ''
-      // completed: false
+      price: '',
+      restaurant: location.hash.split('/')[2]
     };
 
     this.save = function() {
@@ -40,11 +39,3 @@ angular.module('myApp')
     };
   }
 });
-
-      // <div class="form-group">
-      //   <label for="completed">Completed</label>
-      //   <input type="checkbox"
-      //          class="form-control"
-      //          name="completed"
-      //          ng-model="$ctrl.item.completed">
-      // </div>

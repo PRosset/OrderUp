@@ -24,22 +24,6 @@ angular.module('myApp')
     url: "/signup",
     template: "<signup></signup>"
   })
-  // .state('restaurants', {
-  //   url: "/restaurants",
-  //   template: "<restaurants></restaurants>"
-  // })
-  // .state('restaurant-new', {
-  //   url: "/restaurants/new",
-  //   template: "<restaurant-new></restaurant-new>"
-  // })
-  // .state('restaurant-show', {
-  //   url: "/restaurants/:id",
-  //   template: "<restaurant-show></restaurant-show>"
-  // })
-  // .state('restaurant-edit', {
-  //   url: "/restaurants/edit/:id",
-  //   template: "<restaurant-edit></restaurant-edit>"
-  // })
   .state('items', {
     url: "/items",
     template: "<items></items>"
@@ -54,6 +38,45 @@ angular.module('myApp')
   })
   .state('item-edit', {
     url: "/items/edit/:id",
-    template: "<item-edit</item-edit>"
+    template: "<item-edit></item-edit>"
+  })
+  .state('restaurants', {
+    url: "/restaurants",
+    template: "<restaurants></restaurants>"
+  })
+  .state('restaurant-new', {
+    url: "/restaurants/new",
+    template: "<restaurant-new></restaurant-new>"
+  })
+  .state('restaurant-show', {
+    url: "/restaurants/:id",
+    template: "<restaurant-show></restaurant-show>"
+  })
+  .state('restaurant-edit', {
+    url: "/restaurants/edit/:id",
+    template: "<restaurant-edit></restaurant-edit>"
+  })
+  .state('item-new2', {
+    url: "/restaurants/:id/items/new",
+    template: "<item-new></item-new>"
+  })
+
+
+  .state('todos', {
+    url: "/todos",
+    template: "<todos></todos>"
+  })
+  .state('todo-new', {
+    url: "/todos/new",
+    template: "<todo-new></todo-new>"
+  })
+  .state('todo-show', {
+    url: "/todos/:id",
+    template: "<todo-show></todo-show>"
+  })
+  .state('todo-edit', {
+    url: "/todos/edit/:id",
+    template: "<todo-edit></todo-edit>"
   });
+
 });

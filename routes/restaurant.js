@@ -2,6 +2,8 @@ var express = require('express');
 var router = express.Router();
 var Restaurant = require('../models/restaurant');
 
+var Item = require('../models/item');
+
 function makeError(res, message, status) {
   res.statusCode = status;
   var error = new Error(message);
@@ -21,9 +23,42 @@ function authenticate(req, res, next) {
 // INDEX
 router.get('/', authenticate, function(req, res, next) {
   // get all the restaurants and render the index view
-  Restaurant.find({ user: req.user }).sort('-createdAt')
+
+  Restaurant.find({}).sort('-createdAt')
   .then(function(restaurants) {
     res.json(restaurants);
+  }, function(err) {
+    return next(err);
+  });
+});
+
+// CREATE
+router.post('/', authenticate, function(req, res, next) {
+  var restaurant = new Restaurant({
+    title: req.body.title,
+    owner: req.user
+  });
+  restaurant.save()
+  .then(function(saved) {
+    res.json(restaurant);
+  }, function(err) {
+    return next(err);
+  });
+});
+
+// SHOW
+router.get('/:id', authenticate, function(req, res, next) {
+  Restaurant.findById(req.params.id)
+  .then(function(restaurant) {
+    if (!restaurant) return next(makeError(res, 'Document not found', 404));
+    // if (!req.user._id.equals(restaurant.user)) return next(makeError(res, 'You do not own that restaurant', 401));
+    // res.json(restaurant);
+    Item.find({"restaurant" : restaurant._id})
+    .then(function(items) {
+      console.log(items);
+      var restaurantInfo = { items, restaurant };
+      res.json(restaurantInfo);
+    })
   }, function(err) {
     return next(err);
   });
@@ -34,13 +69,27 @@ router.put('/:id', authenticate, function(req, res, next) {
   Restaurant.findById(req.params.id)
   .then(function(restaurant) {
     if (!restaurant) return next(makeError(res, 'Document not found', 404));
-    if (!req.user._id.equals(restaurant.user)) return next(makeError(res, 'Unauthorized', 401));
+    // if (!req.user._id.equals(restaurant.user)) return next(makeError(res, 'Unauthorized', 401));
     restaurant.title = req.body.title;
-    restaurant.completed = req.body.completed ? true : false;
     return restaurant.save();
   })
   .then(function(restaurant) {
     res.json(restaurant);
+  }, function(err) {
+    return next(err);
+  });
+});
+
+// DESTROY
+router.delete('/:id', authenticate, function(req, res, next) {
+  Restaurant.findById(req.params.id)
+  .then(function(restaurant) {
+    if (!restaurant) return next(makeError(res, 'Document not found', 404));
+    // if (!req.user._id.equals(restaurant.user)) return next(makeError(res, 'Unauthorized', 401));
+    return Restaurant.remove( { _id: restaurant._id } );
+  })
+  .then(function() {
+    res.status(204).end();
   }, function(err) {
     return next(err);
   });

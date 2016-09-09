@@ -1,6 +1,7 @@
 var express = require('express');
 var router = express.Router();
 var Item = require('../models/item');
+var Restaurant = require('../models/restaurant');
 
 function makeError(res, message, status) {
   res.statusCode = status;
@@ -20,9 +21,10 @@ function authenticate(req, res, next) {
 
 // INDEX
 router.get('/', authenticate, function(req, res, next) {
-  // get all the items and render the index view
-  Item.find({ user: req.user }).sort('-createdAt')
+  // get all the menu Items and render the index view
+  Item.find({})
   .then(function(items) {
+    console.log(items);
     res.json(items);
   }, function(err) {
     return next(err);
@@ -30,12 +32,12 @@ router.get('/', authenticate, function(req, res, next) {
 });
 
 // CREATE
-router.post('/', authenticate, function(req, res, next) {
+router.post('/', function(req, res, next) {
+  Restaurant.findById({})
   var item = new Item({
     title: req.body.title,
-    price: req.body.price
-    // completed: req.body.completed ? true : false
-    // restaurant:
+    price: req.body.price,
+    restaurant: req.body.restaurant
   });
   item.save()
   .then(function(saved) {
@@ -45,12 +47,12 @@ router.post('/', authenticate, function(req, res, next) {
   });
 });
 
-// SHOW
+// // SHOW
 router.get('/:id', authenticate, function(req, res, next) {
-  Todo.findById(req.params.id)
+  Item.findById(req.params.id)
   .then(function(item) {
     if (!item) return next(makeError(res, 'Document not found', 404));
-    if (!req.user._id.equals(item.user)) return next(makeError(res, 'You do not own that Item', 401));
+    // if (!req.user._id.equals(item.user)) return next(makeError(res, 'You do not own that item', 401));
     res.json(item);
   }, function(err) {
     return next(err);
@@ -62,10 +64,9 @@ router.put('/:id', authenticate, function(req, res, next) {
   Item.findById(req.params.id)
   .then(function(item) {
     if (!item) return next(makeError(res, 'Document not found', 404));
-    if (!req.user._id.equals(item.user)) return next(makeError(res, 'Unauthorized', 401));
+    // if (!req.user._id.equals(item.user)) return next(makeError(res, 'Unauthorized', 401));
     item.title = req.body.title;
     item.price = req.body.price;
-    item.completed = req.body.completed ? true : false;
     return item.save();
   })
   .then(function(item) {
@@ -77,30 +78,14 @@ router.put('/:id', authenticate, function(req, res, next) {
 
 // DESTROY
 router.delete('/:id', authenticate, function(req, res, next) {
-  Todo.findById(req.params.id)
+  Item.findById(req.params.id)
   .then(function(item) {
     if (!item) return next(makeError(res, 'Document not found', 404));
-    if (!req.user._id.equals(item.user)) return next(makeError(res, 'Unauthorized', 401));
+    // if (!req.user._id.equals(item.user)) return next(makeError(res, 'Unauthorized', 401));
     return Item.remove( { _id: item._id } );
   })
   .then(function() {
     res.status(204).end();
-  }, function(err) {
-    return next(err);
-  });
-});
-
-// TOGGLE completed status
-router.get('/:id/toggle', authenticate, function(req, res, next) {
-  Item.findById(req.params.id)
-  .then(function(todo) {
-    if (!item) return next(makeError(res, 'Document not found', 404));
-    if (!req.user._id.equals(item.user)) return next(makeError(res, 'Unauthorized', 401));
-    item.completed = !item.completed;
-    return item.save();
-  })
-  .then(function(item) {
-    res.json(item);
   }, function(err) {
     return next(err);
   });

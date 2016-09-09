@@ -9,10 +9,6 @@ angular.module('myApp')
     return $http.get('/items/' + id);
   };
 
-  this.toggle = function(item) {
-    return $http.get('/items/' + item._id + '/toggle');
-  };
-
   this.create = function(item) {
     return $http.post('/items', item);
   };

@@ -14,6 +14,7 @@ angular.module('myApp')
             <li ng-class="{ active: $ctrl.$state.includes('home') }" ><a ui-sref="home">Home</a></li>
             <li ng-class="{ active: $ctrl.$state.includes('about') }" ><a ui-sref="about">About</a></li>
             <li ng-show="$ctrl.Auth.isLoggedIn()" ng-class="{ active: $ctrl.$state.includes('items') }" ><a ui-sref="items">Items</a></li>
+            <li ng-show="$ctrl.Auth.isLoggedIn()" ng-class="{ active: $ctrl.$state.includes('restaurants') }" ><a ui-sref="restaurants">Restaurants</a></li>
           </ul>
           <ul class="nav navbar-nav navbar-right">
             <li ng-hide="$ctrl.Auth.isLoggedIn()" ng-class="{ active: $ctrl.$state.includes('login')  }" ><a ui-sref="login">Login</a></li>
@@ -37,3 +38,5 @@ angular.module('myApp')
     };
   }
 });
+
+// <li ng-show="$ctrl.Auth.isLoggedIn()" ng-class="{ active: $ctrl.$state.includes('todos') }" ><a ui-sref="todos">Todos</a></li>

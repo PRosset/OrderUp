@@ -1,16 +1,10 @@
 angular.module('myApp')
 .component('itemShow', {
   template: `
-    <h3>SHOW</h3>
+    <h3>SHOW ITEM</h3>
     <p><b>Title: </b>{{ $ctrl.item.title }}</p>
-    <p><b>Price: </b>{{ $ctrl.item.price }}</p>
-    <p><b>ID: </b>{{ $ctrl.item._id }}</p>
-    <p><b>Completed: </b>
-      <span ng-show="$ctrl.item.completed" class="glyphicon glyphicon-ok" aria-hidden="true"></span>
-      <span ng-hide="$ctrl.item.completed" class="glyphicon glyphicon-unchecked" aria-hidden="true"></span>
-    </p>
-    <p><b>Created: </b>{{ $ctrl.item.updatedAt | date : "medium" }}</p>
-    <p><b>Last Updated: </b>{{ $ctrl.item.createdAt | date : "medium" }}</p>
+    <p><b>Price: </b>{{ $ctrl.item.price}}</p>
+    <p><b>Item ID: </b>{{ $ctrl.item._id }}</p>
 
     <a ui-sref="items" class="btn btn-primary">Back</a>
     <a ng-click="$ctrl.edit(item)" class="btn btn-warning">Edit</a>
