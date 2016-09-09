@@ -5,7 +5,7 @@ angular.module('myApp')
       <div class="container-fluid">
         <div class="navbar-header">
           <a class="navbar-brand" ui-sref="home">
-            <span class="glyphicon glyphicon-home"></span> Order Up
+            Order Up
           </a>
         </div>
 
