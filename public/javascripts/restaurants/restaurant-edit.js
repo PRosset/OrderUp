@@ -8,10 +8,10 @@ angular.module('myApp')
         <input type="text"
                class="form-control"
                name="title"
-               ng-model="$ctrl.restaurant.title">
+               ng-model="$ctrl.restaurantInfo.restaurant.title">
       </div>
 
-      <a ng-click="$ctrl.show()" class="btn btn-primary">Back</a>
+      <a ng-click="$ctrl.show(restaurantInfo.restaurant)" class="btn btn-primary">Back</a>
       <button type="submit" class="btn btn-success">Save</button>
     </form>
   `,
@@ -19,11 +19,11 @@ angular.module('myApp')
     this.restaurant = null;
 
     this.show = function() {
-      $state.go('restaurant-show', { id: this.restaurant._id });
+      $state.go('restaurant-show', { id: this.restaurantInfo.restaurant._id });
     };
 
     this.save = function() {
-      restaurantService.update(this.restaurant)
+      restaurantService.update(this.restaurantInfo.restaurant)
       .then( res => {
         $state.go('restaurants');
       });
@@ -31,7 +31,7 @@ angular.module('myApp')
 
     restaurantService.getRestaurant($stateParams.id)
     .then( res => {
-      this.restaurant = res.data;
+      this.restaurantInfo = res.data;
     });
   }
 });
