@@ -6,7 +6,7 @@ angular.module('myApp')
     <p><b>Price: </b>{{ $ctrl.item.price}}</p>
     <p><b>Item ID: </b>{{ $ctrl.item._id }}</p>
 
-    <a ui-sref="items" class="btn btn-primary">Back</a>
+    <a ui-sref="restaurant-show" class="btn btn-primary">Back</a>
     <a ng-click="$ctrl.edit(item)" class="btn btn-warning">Edit</a>
     <!-- I could not get the opts to work this way:
     <!-- <a ui-sref="item-edit" ui-sref-opts="{ id: $ctrl.item._id }" class="btn btn-primary">Edit</a> -->

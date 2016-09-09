@@ -66,6 +66,7 @@ router.get('/:id', authenticate, function(req, res, next) {
 router.put('/:id', authenticate, function(req, res, next) {
   Restaurant.findById(req.params.id)
   .then(function(restaurant) {
+    console.log(restaurant);
     if (!restaurant) return next(makeError(res, 'Document not found', 404));
     // if (!req.user._id.equals(restaurant.user)) return next(makeError(res, 'Unauthorized', 401));
     restaurant.title = req.body.title;

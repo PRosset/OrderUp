@@ -10,11 +10,13 @@ angular.module('myApp')
     </div>
 
     <div class="items" ng-repeat="item in $ctrl.restaurantInfo.items">
+
       <h4><a class="itemTitle" ng-click="$ctrl.show(item)">{{ item.title }}</a></h4>
       <p class="itemDescription"><b>Price: </b>{{ item.price | currency}}</p>
       <p class="itemDescription"><b>Description: </b>{{ item.description }}</p>
       <p ><b>Category: </b>{{ item.category }}</p>
-      <button ng-if="{{currentUser._id === $ctrl.restaurantInfo.restaurant.owner}}" ng-click="$ctrl.delete(item)" class="btn btn-xs btn-danger">X</button>
+      <button ng-click="$ctrl.delete(item)" class="btn btn-xs btn-danger">X</button>
+
     </div>
 
     <a ui-sref="restaurants" class="btn btn-primary">Back</a>
@@ -23,6 +25,10 @@ angular.module('myApp')
   `,
   controller: function(restaurantService, $state, $stateParams) {
     this.restaurant = null;
+
+    this.show = function(item) {
+      $state.go('item-show', { id: item._id });
+    };
 
     this.edit = function() {
       $state.go('restaurant-edit', { id: this.restaurantInfo.restaurant._id });
