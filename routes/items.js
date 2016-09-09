@@ -36,7 +36,8 @@ router.post('/', function(req, res, next) {
   Restaurant.findById({})
   var item = new Item({
     title: req.body.title,
-    price: req.body.price
+    price: req.body.price,
+    restaurant: req.body.restaurant
   });
   item.save()
   .then(function(saved) {

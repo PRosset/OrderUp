@@ -28,7 +28,7 @@ angular.module('myApp')
     this.item = {
       title: '',
       price: '',
-      restaurant: testId
+      restaurant: location.hash.split('/')[2]
     };
 
     this.save = function() {
