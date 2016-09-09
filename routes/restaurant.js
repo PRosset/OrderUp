@@ -1,6 +1,7 @@
 var express = require('express');
 var router = express.Router();
 var Restaurant = require('../models/restaurant');
+var Item = require('../models/item');
 
 function makeError(res, message, status) {
   res.statusCode = status;
@@ -22,8 +23,8 @@ function authenticate(req, res, next) {
 router.get('/', authenticate, function(req, res, next) {
   // get all the restaurants and render the index view
   Restaurant.find({}).sort('-createdAt')
-  .then(function(todos) {
-    res.json(todos);
+  .then(function(restaurants) {
+    res.json(restaurants);
   }, function(err) {
     return next(err);
   });

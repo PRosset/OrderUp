@@ -98,7 +98,7 @@ angular.module('myApp')
         })
         .then(() => {
           // Account created, redirect to todos
-          $state.go('todos');
+          $state.go('restaurants');
         })
         .catch(err => {
           console.log('SIGN UP - err.data:', err.data);

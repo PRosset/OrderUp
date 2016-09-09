@@ -56,6 +56,10 @@ angular.module('myApp')
     url: "/restaurants/edit/:id",
     template: "<restaurant-edit></restaurant-edit>"
   })
+  .state('item-new2', {
+    url: "/restaurants/:id/items/new",
+    template: "<item-new></item-new>"
+  })
 
 
   .state('todos', {

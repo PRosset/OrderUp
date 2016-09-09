@@ -2,9 +2,8 @@ angular.module('myApp')
 .component('itemNew', {
   template: `
     <h3>NEW MENU ITEM</h3>
-
+    <h4> RESTAURANT ID: </h4>
     <form ng-submit="$ctrl.save()">
-
       <div class="form-group">
         <label for="title">Title</label>
         <input type="text"
@@ -29,7 +28,7 @@ angular.module('myApp')
     this.item = {
       title: '',
       price: '',
-      restaurant: "57d1ac214094423d0749115f"
+      restaurant: testId
     };
 
     this.save = function() {

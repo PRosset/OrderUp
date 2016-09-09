@@ -1,6 +1,7 @@
 var express = require('express');
 var router = express.Router();
 var Item = require('../models/item');
+var Restaurant = require('../models/restaurant');
 
 function makeError(res, message, status) {
   res.statusCode = status;
@@ -32,6 +33,7 @@ router.get('/', authenticate, function(req, res, next) {
 
 // CREATE
 router.post('/', function(req, res, next) {
+  Restaurant.findById({})
   var item = new Item({
     title: req.body.title,
     price: req.body.price
