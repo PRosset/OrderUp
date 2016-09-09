@@ -27,7 +27,7 @@ angular.module('myApp')
 
     restaurantService.getRestaurant($stateParams.id)
     .then( res => {
-      this.restaurant = res.data;
+      this.items = res.data;
     });
   }
 });

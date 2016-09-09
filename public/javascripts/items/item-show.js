@@ -4,7 +4,7 @@ angular.module('myApp')
     <h3>SHOW ITEM</h3>
     <p><b>Title: </b>{{ $ctrl.item.title }}</p>
     <p><b>Price: </b>{{ $ctrl.item.price}}</p>
-    <p><b>ID: </b>{{ $ctrl.item._id }}</p>
+    <p><b>Item ID: </b>{{ $ctrl.item._id }}</p>
 
     <a ui-sref="items" class="btn btn-primary">Back</a>
     <a ng-click="$ctrl.edit(item)" class="btn btn-warning">Edit</a>

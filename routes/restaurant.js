@@ -50,7 +50,13 @@ router.get('/:id', authenticate, function(req, res, next) {
   .then(function(restaurant) {
     if (!restaurant) return next(makeError(res, 'Document not found', 404));
     // if (!req.user._id.equals(restaurant.user)) return next(makeError(res, 'You do not own that restaurant', 401));
-    res.json(restaurant);
+    // res.json(restaurant);
+    Item.find({"restaurant" : restaurant._id})
+    .then(function(items) {
+      console.log(items);
+      // restaurantInfo = { items, restaurant };
+      res.json(items);
+    })
   }, function(err) {
     return next(err);
   });
