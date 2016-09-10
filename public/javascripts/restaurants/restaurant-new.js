@@ -16,9 +16,9 @@ angular.module('myApp')
             <select type="text"
                class="form-control"
                name="cuisine"
-               ng-model="data">
+               ng-model="$ctrl.restaurant.cuisine">
               <option ng-repeat="cuisine in $ctrl.cuisines"
-              value="{{$ctrl.cuisines}}">{{cuisine}}</option>
+              value="{{ cuisine }}">{{ cuisine }}</option>
             </select>
       </div>
 
@@ -54,7 +54,7 @@ angular.module('myApp')
     this.cuisines = ['American', 'Chinese', 'Italian', 'Japanese'];
     this.restaurant = {
       title: '',
-      cuisine: this.cuisines,
+      cuisine: '',
       address: '',
       phone: '',
       hours: ''
