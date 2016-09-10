@@ -5,12 +5,8 @@ body {
 }
 
 h1, h2 {
-<<<<<<< HEAD
-  color: #6B7FD7;
-=======
   color: #FBFBF2;
   font-family: 'Poppins', sans-serif;
->>>>>>> front-end
 }
 
 .no-bullets {
