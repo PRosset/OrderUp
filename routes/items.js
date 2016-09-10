@@ -36,7 +36,9 @@ router.post('/', function(req, res, next) {
   Restaurant.findById({})
   var item = new Item({
     title: req.body.title,
+    category: req.body.category,
     price: req.body.price,
+    description: req.body.description,
     restaurant: req.body.restaurant
   });
   item.save()
@@ -66,7 +68,9 @@ router.put('/:id', authenticate, function(req, res, next) {
     if (!item) return next(makeError(res, 'Document not found', 404));
     // if (!req.user._id.equals(item.user)) return next(makeError(res, 'Unauthorized', 401));
     item.title = req.body.title;
+    item.category = req.body.category;
     item.price = req.body.price;
+    item.description = req.body.description;
     return item.save();
   })
   .then(function(item) {

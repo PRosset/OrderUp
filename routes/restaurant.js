@@ -36,7 +36,11 @@ router.get('/', authenticate, function(req, res, next) {
 router.post('/', authenticate, function(req, res, next) {
   var restaurant = new Restaurant({
     title: req.body.title,
-    owner: req.user
+    owner: req.user,
+    cuisine: req.body.cuisine,
+    address: req.body.address,
+    phone: req.body.phone,
+    hours: req.body.hours
   });
   restaurant.save()
   .then(function(saved) {
@@ -68,9 +72,14 @@ router.get('/:id', authenticate, function(req, res, next) {
 router.put('/:id', authenticate, function(req, res, next) {
   Restaurant.findById(req.params.id)
   .then(function(restaurant) {
+    console.log(restaurant);
     if (!restaurant) return next(makeError(res, 'Document not found', 404));
     // if (!req.user._id.equals(restaurant.user)) return next(makeError(res, 'Unauthorized', 401));
     restaurant.title = req.body.title;
+    restaurant.cuisine = req.body.cuisine;
+    restaurant.address = req.body.address;
+    restaurant.phone = req.body.phone;
+    restaurant.hours = req.body.hours;
     return restaurant.save();
   })
   .then(function(restaurant) {

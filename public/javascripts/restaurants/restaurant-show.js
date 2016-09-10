@@ -1,13 +1,23 @@
 angular.module('myApp')
 .component('restaurantShow', {
   template: `
-    <h3>SHOW</h3>
-    <p><b>Title: </b>{{ $ctrl.restaurantInfo.restaurant.title }}</p>
-    <p><b>ID: </b>{{ $ctrl.restaurantInfo.restaurant._id }}</p>
+    <div class="restaurantStuff">
+      <h3>{{ $ctrl.restaurantInfo.restaurant.title }}</h3>
+      <p><b>Cuisine: </b>{{ $ctrl.restaurantInfo.restaurant.cuisine }}</p>
+      <p><b>Address: </b>{{ $ctrl.restaurantInfo.restaurant.address }}</p>
+      <p><b>Phone: </b>{{ $ctrl.restaurantInfo.restaurant.phone }}</p>
+      <p><b>Hours: </b>{{ $ctrl.restaurantInfo.restaurant.hours }}</p>
+    </div>
 
-    <div class="items" ng-repeat="item in $ctrl.restaurantInfo.items">
-      <a ng-click="$ctrl.show(item)">{{ item.title }}</a>
-      <button ng-if="{{currentUser._id === $ctrl.restaurantInfo.restaurant.owner}}" ng-click="$ctrl.delete(item)" class="btn btn-xs btn-danger">X</button>
+    <div class="menuItems"
+      <div class="items" ng-repeat="item in $ctrl.restaurantInfo.items">
+        <h4><a class="itemTitle" ng-click="$ctrl.show(item)">{{ item.title }}</a>
+          <button ng-click="$ctrl.delete(item)" class="btn btn-xs btn-danger">X</button>
+        </h4>
+        <p class="itemDescription"><b>Price: </b>{{ item.price | currency}}</p>
+        <p class="itemDescription"><b>Description: </b>{{ item.description }}</p>
+        <p class="itemDescription"><b>Category: </b>{{ item.category }}</p>
+      </div>
     </div>
 
     <a ui-sref="restaurants" class="btn btn-primary">Back</a>
@@ -16,6 +26,10 @@ angular.module('myApp')
   `,
   controller: function(restaurantService, $state, $stateParams) {
     this.restaurant = null;
+
+    this.show = function(item) {
+      $state.go('item-show', { id: item._id });
+    };
 
     this.edit = function() {
       $state.go('restaurant-edit', { id: this.restaurantInfo.restaurant._id });
@@ -31,5 +45,3 @@ angular.module('myApp')
     });
   }
 });
-
-// object.restaurant

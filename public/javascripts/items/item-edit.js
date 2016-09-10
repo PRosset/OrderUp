@@ -14,6 +14,15 @@ angular.module('myApp')
       </div>
 
       <div class="form-group">
+        <label for="title">Category</label>
+            <select type="text"
+               class="form-control"
+               name="categories">
+              <option ng-repeat="x in $ctrl.categories">{{x}}</option>
+            </select>
+      </div>
+
+      <div class="form-group">
         <label for="title">Price</label>
         <input type="Number"
                class="form-control"
@@ -21,7 +30,13 @@ angular.module('myApp')
                ng-model="$ctrl.item.price">
       </div>
 
-
+      <div class="form-group">
+        <label for="title">Description</label>
+        <input type="text"
+               class="form-control"
+               name="description"
+               ng-model="$ctrl.item.description">
+      </div>
 
       <a ng-click="$ctrl.show()" class="btn btn-primary">Back</a>
       <button type="submit" class="btn btn-success">Save</button>
@@ -29,6 +44,7 @@ angular.module('myApp')
   `,
   controller: function(itemService, $state, $stateParams) {
     this.item = null;
+    this.categories = ['Appetizer', 'Entree', 'Sides', 'Desserts', 'Drinks'];
 
     this.show = function() {
       $state.go('item-show', { id: this.item._id });
@@ -37,7 +53,7 @@ angular.module('myApp')
     this.save = function() {
       itemService.update(this.item)
       .then( res => {
-        $state.go('items');
+        $state.go('item-show', { id: this.item._id } );
       });
     };
 
