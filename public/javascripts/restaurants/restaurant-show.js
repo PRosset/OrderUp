@@ -9,14 +9,15 @@ angular.module('myApp')
       <p><b>Hours: </b>{{ $ctrl.restaurantInfo.restaurant.hours }}</p>
     </div>
 
-    <div class="items" ng-repeat="item in $ctrl.restaurantInfo.items">
-
-      <h4><a class="itemTitle" ng-click="$ctrl.show(item)">{{ item.title }}</a></h4>
-      <p class="itemDescription"><b>Price: </b>{{ item.price | currency}}</p>
-      <p class="itemDescription"><b>Description: </b>{{ item.description }}</p>
-      <p ><b>Category: </b>{{ item.category }}</p>
-      <button ng-click="$ctrl.delete(item)" class="btn btn-xs btn-danger">X</button>
-
+    <div class="menuItems"
+      <div class="items" ng-repeat="item in $ctrl.restaurantInfo.items">
+        <h4><a class="itemTitle" ng-click="$ctrl.show(item)">{{ item.title }}</a>
+          <button ng-click="$ctrl.delete(item)" class="btn btn-xs btn-danger">X</button>
+        </h4>
+        <p class="itemDescription"><b>Price: </b>{{ item.price | currency}}</p>
+        <p class="itemDescription"><b>Description: </b>{{ item.description }}</p>
+        <p class="itemDescription"><b>Category: </b>{{ item.category }}</p>
+      </div>
     </div>
 
     <a ui-sref="restaurants" class="btn btn-primary">Back</a>

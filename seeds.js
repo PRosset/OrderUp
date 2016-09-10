@@ -69,7 +69,11 @@ Item.remove({})
   let fellinis = new Restaurant();
   fellinis = {
     title: 'Fellinis',
-    owner: owner._id
+    owner: owner._id,
+    cuisine: 'Italian',
+    address: '123 Ponce de Leon, Atlanta, GA 30308',
+    phone: '404-123-4567',
+    hours: 'M-F 10AM-2AM'
   };
   console.log(fellinis);
   return Restaurant.create(fellinis);
@@ -79,7 +83,9 @@ Item.remove({})
   pizza = {
     title: "Pizza",
     price: 6,
-    restaurant: restaurant._id
+    restaurant: restaurant._id,
+    category: 'entree',
+    description: 'Plain cheese pizza on NY style crust'
   }
   return Item.create(pizza);
 })
