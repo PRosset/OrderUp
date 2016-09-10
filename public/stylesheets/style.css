@@ -69,18 +69,22 @@ p.itemDescription {
 .restaurants {
   background-color: #FBFBF2;
   border-radius: 10px;
-  padding: 10px;
-  margin: 10px;
+  margin-bottom: 10px;
   border: 3px #5D576B solid;
   box-shadow: 2px 2px 5px 0px rgba(0,0,0,0.75);
 }
-.restaurants h2 {
-  color: black;
-  margin: 0;
+.restaurantName {
+  font-size: 2em;
+  font-weight: 800;
 }
 
 .deleteBtn {
   position: absolute;
   bottom: 10px;
   right: 10px;
+}
+
+.restaurantAddress {
+  font-weight: 400px;
+  font-size: 1.2em;
 }

@@ -4,7 +4,7 @@ angular.module('myApp')
     <h1>RESTAURANTS</h1>
     <div class="row" ng-repeat = "restaurant in $ctrl.restaurants">
       <div class="restaurants col-md-6 col-md-offset-3">
-        <h2 ng-click="$ctrl.show(restaurant)">{{ restaurant.title }}</h2>
+        <p class="restaurantName"ng-click="$ctrl.show(restaurant)">{{ restaurant.title }}</p>
         <button ng-click="$ctrl.delete(restaurant)" class="deleteBtn btn btn-xs btn-danger">X</button>
         <p class="restaurantAddress">{{ restaurant.address }}</p>
         <p><b>Hours: </b>{{ restaurant.hours }}</p>
