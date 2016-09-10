@@ -3,8 +3,10 @@ angular.module('myApp')
   template: `
     <h3>SHOW ITEM</h3>
     <p><b>Title: </b>{{ $ctrl.item.title }}</p>
+    <p><b>Category: </b> </p>
     <p><b>Price: </b>{{ $ctrl.item.price}}</p>
     <p><b>Item ID: </b>{{ $ctrl.item._id }}</p>
+    <p><b>Description: </b> </p>
 
     <a ui-sref="restaurant-show" class="btn btn-primary">Back</a>
     <a ng-click="$ctrl.edit(item)" class="btn btn-warning">Edit</a>

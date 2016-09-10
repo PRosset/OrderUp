@@ -1,11 +1,12 @@
 body {
   padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  font: 14px 'Poppins', sans-serif;
   background-color: #B5DFCA;
 }
 
 h1, h2 {
-  color: blue;
+  color: #FBFBF2;
+  font-family: 'Poppins', sans-serif;
 }
 
 .no-bullets {
@@ -26,6 +27,13 @@ footer {
 }
 
 .restaurantStuff {
+  background-color: #5D576B;
+  border-radius: 10px;
+  padding: 1%;
+  margin-top: 1em;
+}
+
+.menuItems {
   background-color: #FBFBF2;
   border-radius: 10px;
   padding: 1%;
@@ -51,4 +59,9 @@ a.itemTitle:hover {
 
 p.itemDescription {
   color: #8693AB;
+}
+
+.navbar-default {
+  background: #273043;
+  border-color: #FBFBF2;
 }

@@ -12,6 +12,15 @@ angular.module('myApp')
       </div>
 
       <div class="form-group">
+        <label for="title">Category</label>
+            <select type="text"
+               class="form-control"
+               name="categories">
+              <option ng-repeat="x in $ctrl.categories">{{x}}</option>
+            </select>
+      </div>
+
+      <div class="form-group">
         <label for="title">Price</label>
         <input type="text"
                class="form-control"
@@ -20,12 +29,11 @@ angular.module('myApp')
       </div>
 
       <div class="form-group">
-        <label for="title">Category</label>
-            <select type="text"
+        <label for="description">Description</label>
+        <input type="text"
                class="form-control"
-               name="categories">
-              <option ng-repeat="x in $ctrl.categories">{{x}}</option>
-            </select>
+               name="description"
+
       </div>
 
       <a ui-sref="items" class="btn btn-primary">Back</a>
