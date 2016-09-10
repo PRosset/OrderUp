@@ -45,7 +45,7 @@ angular.module('myApp')
     this.save = function() {
       itemService.update(this.item)
       .then( res => {
-        $state.go('items');
+        $state.go('item-show', { id: this.item._id } );
       });
     };
 

@@ -44,7 +44,7 @@ angular.module('myApp')
     this.save = function() {
       itemService.create(this.item)
       .then( res => {
-        $state.go('items');
+        $state.go('restaurant-show', { id: this.item.restaurant });
       });
     };
   }

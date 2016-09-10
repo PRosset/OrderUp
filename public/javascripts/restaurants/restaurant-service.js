@@ -20,4 +20,11 @@ angular.module('myApp')
   this.delete = function(restaurant) {
     return $http.delete('/restaurants/' + restaurant._id);
   };
+
+
+
+
+  this.deleteItem = function(item) {
+    return $http.delete('/items/' + item._id);
+  };
 });
