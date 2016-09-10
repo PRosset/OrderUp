@@ -15,9 +15,10 @@ angular.module('myApp')
         <label for="cuisine">Cuisine</label>
             <select type="text"
                class="form-control"
-               name="cuisine">
-              <option ng-repeat="x in $ctrl.cuisine"
-              value="{{x}}">{{x}}</option>
+               name="cuisine"
+               ng-model="data">
+              <option ng-repeat="cuisine in $ctrl.cuisines"
+              value="{{$ctrl.cuisines}}">{{cuisine}}</option>
             </select>
       </div>
 
@@ -50,11 +51,10 @@ angular.module('myApp')
     </form>
   `,
   controller: function(restaurantService, $state) {
-    this.cuisine = ['American', 'Chinese', 'Italian', 'Japanese'];
-
+    this.cuisines = ['American', 'Chinese', 'Italian', 'Japanese'];
     this.restaurant = {
       title: '',
-      cuisine: '',
+      cuisine: this.cuisines,
       address: '',
       phone: '',
       hours: ''
