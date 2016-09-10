@@ -12,7 +12,7 @@ angular.module('myApp')
       </div>
 
       <div class="form-group">
-        <label for="title">Category</label>
+        <label for="category">Category</label>
             <select type="text"
                class="form-control"
                name="categories">
@@ -21,7 +21,7 @@ angular.module('myApp')
       </div>
 
       <div class="form-group">
-        <label for="title">Price</label>
+        <label for="price">Price</label>
         <input type="text"
                class="form-control"
                name="price"
@@ -33,7 +33,7 @@ angular.module('myApp')
         <input type="text"
                class="form-control"
                name="description"
-
+               ng-model="$ctrl.item.description">
       </div>
 
       <a ui-sref="items" class="btn btn-primary">Back</a>
@@ -45,7 +45,9 @@ angular.module('myApp')
 
     this.item = {
       title: '',
+      category: '',
       price: '',
+      description: '',
       restaurant: location.hash.split('/')[2]
     };
 
