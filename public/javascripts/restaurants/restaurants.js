@@ -2,15 +2,14 @@ angular.module('myApp')
 .component('restaurants', {
   template: `
     <h1>RESTAURANTS</h1>
-    <div class="restaurants" ng-repeat = "restaurant in $ctrl.restaurants">
-      <p ng-click="$ctrl.show(restaurant)">{{ restaurant.title }}
-        <button ng-click="$ctrl.delete(restaurant)" class="btn btn-xs btn-danger">X</button>
-      </p>
-      <p><b>Cuisine: </b>{{ restaurant.cuisine}}</p>
-      <p><b>Address: </b>{{ restaurant.address }}</p>
-      <p><b>Hours: </b>{{ restaurant.hours }}</p>
-      <p><b>Phone: </b>{{ restaurant.phone}}</p>
-
+    <div class="row" ng-repeat = "restaurant in $ctrl.restaurants">
+      <div class="restaurants col-md-6 col-md-offset-3">
+        <h2 ng-click="$ctrl.show(restaurant)">{{ restaurant.title }}</h2>
+        <button ng-click="$ctrl.delete(restaurant)" class="deleteBtn btn btn-xs btn-danger">X</button>
+        <p class="restaurantAddress">{{ restaurant.address }}</p>
+        <p><b>Hours: </b>{{ restaurant.hours }}</p>
+        <p>{{ restaurant.phone }}</p>
+      </div>
     </div>
     <hr/>
     <a ui-sref="restaurant-new" class="btn btn-primary">New</a>
