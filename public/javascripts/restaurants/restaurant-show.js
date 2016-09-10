@@ -45,8 +45,3 @@ angular.module('myApp')
     });
   }
 });
-<<<<<<< HEAD
-=======
-
-// object.restaurant
->>>>>>> brandon
