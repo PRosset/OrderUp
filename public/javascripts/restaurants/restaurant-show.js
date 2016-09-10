@@ -12,7 +12,7 @@ angular.module('myApp')
     <div class="menuItems"
       <div class="items" ng-repeat="item in $ctrl.restaurantInfo.items">
         <h4><a class="itemTitle" ng-click="$ctrl.show(item)">{{ item.title }}</a>
-          <button ng-click="$ctrl.delete(item)" class="btn btn-xs btn-danger">X</button>
+          <button ng-click="$ctrl.deleteItem(item)" class="btn btn-xs btn-danger">X</button>
         </h4>
         <p class="itemDescription"><b>Price: </b>{{ item.price | currency}}</p>
         <p class="itemDescription"><b>Description: </b>{{ item.description }}</p>
@@ -37,6 +37,13 @@ angular.module('myApp')
 
     this.newItem = function() {
       $state.go('item-new2', { id: this.restaurantInfo.restaurant._id });
+    };
+
+    this.deleteItem = function(item) {
+      restaurantService.deleteItem(item)
+      .then( res => {
+        this.getItems();
+      });
     };
 
     restaurantService.getRestaurant($stateParams.id)

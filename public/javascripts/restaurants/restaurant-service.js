@@ -23,6 +23,9 @@ angular.module('myApp')
 
 
 
+  this.getItems = function() {
+    return $http.get('/items');
+  };
 
   this.deleteItem = function(item) {
     return $http.delete('/items/' + item._id);

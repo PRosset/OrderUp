@@ -58,7 +58,6 @@ angular.module('myApp')
           password: this.user.password
         })
         .then(() => {
-          // Logged in, redirect to todos
           $state.go('restaurants');
         })
         .catch(err => {
