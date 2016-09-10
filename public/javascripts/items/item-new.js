@@ -22,7 +22,7 @@ angular.module('myApp')
 
       <div class="form-group">
         <label for="price">Price</label>
-        <input type="text"
+        <input type="number"
                class="form-control"
                name="price"
                ng-model="$ctrl.item.price">
