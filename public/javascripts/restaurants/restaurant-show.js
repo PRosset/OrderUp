@@ -10,9 +10,9 @@ angular.module('myApp')
     </div>
 
     <div class="categories col-xs-6 col-md-offset-3">
-      <ul class="list-unstyled" id="menuCategories" ng-model="$ctrl.item.category" ng-repeat="category in $ctrl.categories">
-        <button ng-click="$ctrl.sendCategory(category)">{{ category }}</button>
-      </ul>
+      <uib-tabset type="pills" active="activeItemId" ng-model="$ctrl.item.category" ng-repeat="category in $ctrl.categories">
+        <uib-tab heading="{{category}}" ng-click="$ctrl.sendCategory(category)"></uib-tab>
+      </uib-tabset>
     </div>
 
     <div class="menuItems">
@@ -33,9 +33,11 @@ angular.module('myApp')
   controller: function(restaurantService, $state, $stateParams) {
     this.restaurant = null;
     this.categories = ['Appetizer', 'Entree', 'Sides', 'Desserts', 'Drinks'];
+    this.activeItemId = 0;
 
     this.sendCategory = function(category) {
      this.search = category;
+     console.log(category.id);
      console.log('I fired');
      console.log(this.search);
     };

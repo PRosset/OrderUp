@@ -125,9 +125,5 @@ main.ng-leave.ng-leave-active {
   opacity:0;
 }*/
 
-.categories {
-  display:flex;
-  list-style:none;
-  justify-content: space-between;
-}
+
 

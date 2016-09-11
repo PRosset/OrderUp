@@ -1,4 +1,4 @@
-angular.module('myApp', ['ngMessages', 'ngAnimate', 'ui.router']);
+angular.module('myApp', ['ngMessages', 'ngAnimate', 'ui.router', 'ui.bootstrap']);
 
 angular.module('myApp')
 .config(function($stateProvider, $urlRouterProvider) {
