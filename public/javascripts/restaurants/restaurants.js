@@ -2,9 +2,17 @@ angular.module('myApp')
 .component('restaurants', {
   template: `
     <h1>RESTAURANTS</h1>
-    <div class="searchBar">
-      <input type="text" class="col-xs-6 col-md-offset-3 input-lg" id="inputlg" ng-model="search" placeholder="Search by restaurant or cuisine type"/>
+    <div class="row">
+      <div class="col-lg-4 col-md-offset-4">
+        <div class="input-group">
+          <input type="text" class="form-control" ng-model="search" placeholder="Search for a restaurant">
+          <span class="input-group-btn">
+            <button class="btn btn-default" type="button">cuisine</button>
+          </span>
+        </div>
+      </div>
     </div>
+
     <div id="restaurantList" class="row" ng-repeat="restaurant in $ctrl.restaurants | filter: search">
       <div class="restaurants col-md-6 col-md-offset-3">
         <p class="restaurantName"ng-click="$ctrl.show(restaurant)">{{ restaurant.title }}</p>
@@ -20,6 +28,7 @@ angular.module('myApp')
   `,
   controller: function(restaurantService, $state) {
     this.restaurants = null;
+    this.cuisines = ['American', 'Chinese', 'Italian', 'Japanese'];
 
     this.getRestaurants = function() {
       restaurantService.getRestaurants()
