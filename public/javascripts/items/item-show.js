@@ -3,10 +3,10 @@ angular.module('myApp')
   template: `
     <h3>SHOW ITEM</h3>
     <p><b>Title: </b>{{ $ctrl.item.title }}</p>
-    <p><b>Category: </b> </p>
-    <p><b>Price: </b>{{ $ctrl.item.price}}</p>
+    <p><b>Category: </b> {{$ctrl.item.category }}</p>
+    <p><b>Price: </b>{{ $ctrl.item.price }}</p>
     <p><b>Item ID: </b>{{ $ctrl.item._id }}</p>
-    <p><b>Description: </b> </p>
+    <p><b>Description: </b> {{ $ctrl.item.description }}</p>
 
     <a ng-click="$ctrl.back(item)" class="btn btn-primary">Back</a>
     <a ng-click="$ctrl.edit(item)" class="btn btn-warning">Edit</a>

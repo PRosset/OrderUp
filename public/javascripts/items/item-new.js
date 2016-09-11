@@ -15,8 +15,10 @@ angular.module('myApp')
         <label for="category">Category</label>
             <select type="text"
                class="form-control"
-               name="categories">
-              <option ng-repeat="x in $ctrl.categories">{{x}}</option>
+               name="category"
+               ng-model="$ctrl.item.category">
+              <option ng-repeat="category in $ctrl.categories"
+              value="{{ category }}"> {{ category }} </option>
             </select>
       </div>
 
