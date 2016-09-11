@@ -27,6 +27,7 @@ angular.module('myApp')
       <div class="form-group">
         <label for="title">Price</label>
         <input type="Number"
+               step="0.01"
                class="form-control"
                name="price"
                ng-model="$ctrl.item.price">

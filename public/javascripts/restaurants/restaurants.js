@@ -2,7 +2,7 @@ angular.module('myApp')
 .component('restaurants', {
   template: `
     <h1>RESTAURANTS</h1>
-    <div class="row" ng-repeat = "restaurant in $ctrl.restaurants">
+    <div id="restaurantList"class="row" ng-repeat = "restaurant in $ctrl.restaurants">
       <div class="restaurants col-md-6 col-md-offset-3">
         <p class="restaurantName"ng-click="$ctrl.show(restaurant)">{{ restaurant.title }}</p>
         <hr/>
