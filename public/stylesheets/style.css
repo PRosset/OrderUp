@@ -73,14 +73,21 @@ p.itemDescription {
   border: 3px #5D576B solid;
   box-shadow: 2px 2px 5px 0px rgba(0,0,0,0.75);
 }
+.restaurants:hover {
+  background-color: #fafafa;
+}
+.restaurants hr {
+  margin: 5px;
+}
 .restaurantName {
   font-size: 2em;
   font-weight: 800;
+  margin: 3px 0 0 0;
 }
 
 .deleteBtn {
   position: absolute;
-  bottom: 10px;
+  top: 10px;
   right: 10px;
 }
 
