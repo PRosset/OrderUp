@@ -33,7 +33,7 @@ footer {
   margin-top: 1em;
 }
 
-.menuItems {
+.items {
   background-color: #FBFBF2;
   border-radius: 10px;
   padding: 1%;
@@ -77,13 +77,8 @@ p.itemDescription {
   background-color: #fafafa;
 }
 
-.menuItems .items.ng-leave {
-  transition: 0.5s linear all;
-  opacity: 1;
-}
-
-.menuItems .items.ng-leave-active {
-  opacity: 0;
+.menuItems {
+  padding-top: 10px;
 }
 
 .restaurants hr {
@@ -129,3 +124,10 @@ main.ng-enter.ng-enter-active {
 main.ng-leave.ng-leave-active {
   opacity:0;
 }*/
+
+.categories {
+  display:flex;
+  list-style:none;
+  justify-content: space-between;
+}
+

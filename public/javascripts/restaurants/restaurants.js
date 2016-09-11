@@ -3,7 +3,7 @@ angular.module('myApp')
   template: `
     <h1>RESTAURANTS</h1>
     <div class="searchBar">
-      <input type="text" class="col-xs-6 col-md-offset-3 input-lg" id="inputlg" ng-model="search" placeholder="Search for a restaurant"/>
+      <input type="text" class="col-xs-6 col-md-offset-3 input-lg" id="inputlg" ng-model="search" placeholder="Search by restaurant or cuisine type"/>
     </div>
     <div id="restaurantList" class="row" ng-repeat="restaurant in $ctrl.restaurants | filter: search">
       <div class="restaurants col-md-6 col-md-offset-3">

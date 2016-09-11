@@ -9,9 +9,14 @@ angular.module('myApp')
       <p><b>Hours: </b>{{ $ctrl.restaurantInfo.restaurant.hours }}</p>
     </div>
 
-    <button ng-click="$ctrl." ng-model="appetizers">Appetizers</button>
-    <div class="menuItems"
-      <div class="items" ng-repeat="item in $ctrl.restaurantInfo.items | orderBy: 'category'" | filter: appetizers>
+    <div class="categories col-xs-6 col-md-offset-3">
+      <ul class="list-unstyled" id="menuCategories" ng-model="$ctrl.item.category" ng-repeat="category in $ctrl.categories">
+        <button ng-click="$ctrl.sendCategory(category)">{{ category }}</button>
+      </ul>
+    </div>
+
+    <div class="menuItems">
+      <div class="items" ng-repeat="item in $ctrl.restaurantInfo.items | orderBy: 'category' | filter : $ctrl.search ">
         <h4><a class="itemTitle" ng-click="$ctrl.show(item)">{{ item.title }}</a>
           <button ng-click="$ctrl.deleteItem(item)" class="btn btn-xs btn-danger">X</button>
         </h4>
@@ -27,6 +32,14 @@ angular.module('myApp')
   `,
   controller: function(restaurantService, $state, $stateParams) {
     this.restaurant = null;
+    this.categories = ['Appetizer', 'Entree', 'Sides', 'Desserts', 'Drinks'];
+
+    this.sendCategory = function(category) {
+     this.search = category;
+     console.log('I fired');
+     console.log(this.search);
+    };
+
 
     this.show = function(item) {
       $state.go('item-show', { id: item._id });
