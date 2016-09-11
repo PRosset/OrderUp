@@ -9,7 +9,7 @@ angular.module('myApp')
       <p><b>Hours: </b>{{ $ctrl.restaurantInfo.restaurant.hours }}</p>
     </div>
 
-    <button ng-model="appetizers">Appetizers</button>
+    <button ng-click="$ctrl." ng-model="appetizers">Appetizers</button>
     <div class="menuItems"
       <div class="items" ng-repeat="item in $ctrl.restaurantInfo.items | orderBy: 'category'" | filter: appetizers>
         <h4><a class="itemTitle" ng-click="$ctrl.show(item)">{{ item.title }}</a>
