@@ -43,7 +43,10 @@ angular.module('myApp')
     this.deleteItem = function(item) {
       restaurantService.deleteItem(item)
       .then( res => {
-        this.getItems();
+        restaurantService.getRestaurant($stateParams.id)
+        .then( res => {
+        this.restaurantInfo = res.data;
+        });
       });
     };
 
