@@ -51,7 +51,11 @@ angular.module('myApp')
     </form>
   `,
   controller: function(restaurantService, $state) {
-    this.cuisines = ['American', 'Chinese', 'Italian', 'Japanese'];
+    this.cuisines = ['African', 'American', 'Asian Fusion', 'Bagels', 'Barbeque', 'British', 'Cajun', 'Cantonese', 'Chinese',
+                    'Cuban', 'Deli', 'Ethiopian', 'French', 'German', 'Greek', 'Hawaiian', 'Indian', 'Italian', 'Jamacian',
+                    'Japanese', 'Korean', 'Kosher', 'Latin American', 'Mexican', 'Moroccan', 'Nepalese', 'Persian', 'Peruvian',
+                    'Russian', 'Seafood','Soul Food', 'Southern', 'Spanish', 'Steakhouse', 'Sushi', 'Tapas', 'Tex Mex', 'Thai',
+                    'Vegan', 'Vegetarian', 'Vietnamese'];
     this.restaurant = {
       title: '',
       cuisine: '',
