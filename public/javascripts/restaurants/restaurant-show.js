@@ -1,8 +1,13 @@
 angular.module('myApp')
 .component('restaurantShow', {
   template: `
+    <a ui-sref="restaurants" class="btn btn-primary">Back</a>
+    <a ng-if="$ctrl.checkOwner(restaurant)" ng-click="$ctrl.edit(restaurant)" class="btn btn-warning">Edit</a>
+    <a ng-if="$ctrl.checkOwner(restaurant)" ng-click="$ctrl.newItem(restaurant)" class="btn btn-warning">New Menu Item</a>
+
     <div class="restaurantDetails">
       <h3>{{ $ctrl.restaurantInfo.restaurant.title }}</h3>
+      <hr/>
       <p><b>Cuisine: </b>{{ $ctrl.restaurantInfo.restaurant.cuisine }}</p>
       <p><b>Address: </b>{{ $ctrl.restaurantInfo.restaurant.address }}</p>
       <p><b>Phone: </b>{{ $ctrl.restaurantInfo.restaurant.phone }}</p>
@@ -25,10 +30,6 @@ angular.module('myApp')
         <p class="itemDescription"><b>Category: </b>{{ item.category }}</p>
       </div>
     </div>
-
-    <a ui-sref="restaurants" class="btn btn-primary">Back</a>
-    <a ng-if="$ctrl.checkOwner(restaurant)" ng-click="$ctrl.edit(restaurant)" class="btn btn-warning">Edit</a>
-    <a ng-if="$ctrl.checkOwner(restaurant)" ng-click="$ctrl.newItem(restaurant)" class="btn btn-warning">New Menu Item</a>
   `,
   controller: function(restaurantService, Auth, $state, $stateParams) {
     this.restaurant = null;
@@ -56,13 +57,9 @@ angular.module('myApp')
     };
 
     this.deleteItem = function(item) {
-      restaurantService.deleteItem(item)
-      .then( res => {
-        restaurantService.getRestaurant($stateParams.id)
-        .then( res => {
-        this.restaurantInfo = res.data;
-        });
-      });
+      var deletedItem = this.restaurantInfo.items.indexOf(item)
+      this.restaurantInfo.items.splice(deletedItem, 1);
+      restaurantService.deleteItem(item);
     };
 
     restaurantService.getRestaurant($stateParams.id)
