@@ -31,6 +31,8 @@ footer {
   border-radius: 10px;
   padding: 1%;
   margin-top: 1em;
+  margin-bottom: 1em;
+  box-shadow: 2px 5px 15px 0px rgba(0,0,0,0.75);
 }
 
 .items {
@@ -38,6 +40,7 @@ footer {
   border-radius: 10px;
   padding: 1%;
   margin-top: 1em;
+  overflow-y: scroll;
 }
 
 h3 {
@@ -51,6 +54,7 @@ a.itemTitle {
   text-decoration: none;
   font-size: 1em;
   color: #6B7FD7;
+  margin-bottom: 2em;
 }
 
 a.itemTitle:hover {
@@ -100,6 +104,7 @@ p.itemDescription {
   font-weight: 400px;
   font-size: 1.2em;
 }
+
 
 /*.searchBar {
   margin-bottom: 5px;
