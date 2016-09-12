@@ -72,12 +72,10 @@ angular.module('myApp')
             </p>
           </div>
           <div>
-            <button class="btn btn-inverse btn-lg btn-register" type="submit">
+            <button class="btn btn-default btn-lg btn-register" type="submit">
               Sign up
             </button>
-            <a class="btn btn-default btn-lg btn-login" ui-sref="login">
-              Login
-            </a>
+            <p>Already have an account?  Sign in <a ui-sref="login">here</a>.</p>
           </div>
         </form>
       </div>
