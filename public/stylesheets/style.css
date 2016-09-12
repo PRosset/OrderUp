@@ -31,6 +31,8 @@ footer {
   border-radius: 10px;
   padding: 1%;
   margin-top: 1em;
+  margin-bottom: 1em;
+  box-shadow: 2px 5px 15px 0px rgba(0,0,0,0.75);
 }
 .restaurantDetails p {
   color: #fafafa;
@@ -41,6 +43,7 @@ footer {
   border-radius: 10px;
   padding: 1%;
   margin-top: 1em;
+  overflow-y: scroll;
 }
 
 h3 {
@@ -54,6 +57,7 @@ a.itemTitle {
   text-decoration: none;
   font-size: 1em;
   color: #6B7FD7;
+  margin-bottom: 2em;
 }
 
 a.itemTitle:hover {
@@ -161,6 +165,7 @@ main.ng-enter.ng-enter-active {
   opacity: 0;
 }
 
+
 .itemShow {
   background-color: #FBFBF2;
   border-radius: 10px;
@@ -175,3 +180,4 @@ main.ng-enter.ng-enter-active {
   color: #6B7FD7;
   font-size: 20px;
 }
+
