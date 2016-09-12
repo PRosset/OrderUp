@@ -78,6 +78,8 @@ p.itemDescription {
 }
 .restaurants:hover {
   background-color: #fafafa;
+  border-color: #6B7FD7;
+  color: #6B7FD7;
 }
 
 .menuItems {
@@ -157,4 +159,19 @@ main.ng-enter.ng-enter-active {
 }
 .items.ng-leave.ng-leave-active {
   opacity: 0;
+}
+
+.itemShow {
+  background-color: #FBFBF2;
+  border-radius: 10px;
+  padding: 1%;
+  margin-top: 1em;
+  margin-bottom: 1em;
+  border: 3px #5D576B solid;
+  box-shadow: 2px 2px 5px 0px rgba(0,0,0,0.75);
+}
+
+.itemTitle {
+  color: #6B7FD7;
+  font-size: 20px;
 }
