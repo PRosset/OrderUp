@@ -125,5 +125,13 @@ main.ng-leave.ng-leave-active {
   opacity:0;
 }*/
 
+.footer {
+  background-color: #6B7FD7;
+  color: white;
+  text-align: right;
+  padding: 10px 20px 10px 10px;
+  font-size: 15px;
+}
+
 
 

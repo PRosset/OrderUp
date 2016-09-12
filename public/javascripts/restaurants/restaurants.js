@@ -24,7 +24,10 @@ angular.module('myApp')
       </div>
     </div>
     <hr/>
-    <a ui-sref="restaurant-new" class="btn btn-primary">New</a>
+  <div class="footer navbar-fixed-bottom">
+    <p>Own a spot? <a ui-sref="restaurant-new" class="btn btn-default">Add a restaurant</a>
+    </p>
+  </div>
   `,
   controller: function(restaurantService, Auth, $state) {
     this.restaurants = null;

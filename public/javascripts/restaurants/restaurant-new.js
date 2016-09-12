@@ -1,7 +1,7 @@
 angular.module('myApp')
 .component('restaurantNew', {
   template: `
-    <h3>NEW</h3>
+    <h3>Add a New Restaurant</h3>
     <form ng-submit="$ctrl.save()">
       <div class="form-group">
         <label for="title">Title</label>

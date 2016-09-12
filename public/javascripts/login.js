@@ -33,7 +33,7 @@ angular.module('myApp')
           </div>
 
           <div>
-            <button class="btn btn-inverse btn-lg btn-login" type="submit">
+            <button class="btn btn-default btn-lg btn-login" type="submit">
               Login
             </button>
             <a class="btn btn-default btn-lg btn-register" ui-sref="signup">
