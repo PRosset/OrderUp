@@ -16,7 +16,7 @@ angular.module('myApp')
 
     <div class="categories col-xs-6 col-md-offset-3">
       <uib-tabset type="pills" active="activeItemId" ng-model="$ctrl.item.category">
-        <uib-tab class="pillButton" ng-repeat="category in $ctrl.categories" heading="{{category}}" ng-click="$ctrl.sendCategory(category)"></uib-tab>
+        <uib-tab class="pillButton" ng-repeat="category in $ctrl.categories" heading="{{category.title}}" ng-click="$ctrl.sendCategory(category.searchParam)"></uib-tab>
       </uib-tabset>
     </div>
 
@@ -33,7 +33,8 @@ angular.module('myApp')
   `,
   controller: function(restaurantService, Auth, $state, $stateParams) {
     this.restaurant = null;
-    this.categories = ['Appetizer', 'Entree', 'Sides', 'Desserts', 'Drinks'];
+    // this.categories = ['Appetizer', 'Entree', 'Sides', 'Desserts', 'Drinks'];
+    this.categories = [ {title: "Full Menu", searchParam: ''}, { title: 'Appetizers', searchParam: 'appetizer'}, { title: 'Entrees', searchParam: 'entree'},  { title: 'Sides', searchParam: 'sides'}, { title: 'Desserts', searchParam: 'desserts'}, { title: 'Drinks', searchParam: 'drinks'}];
     this.activeItemId = 0;
 
     this.sendCategory = function(category) {

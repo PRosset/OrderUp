@@ -17,6 +17,7 @@ angular.module('myApp')
         <p>{{ restaurant.phone }}</p>
       </div>
     </div>
+
   <div class="footer navbar-fixed-bottom">
     <p>Own a spot? <a ui-sref="restaurant-new" class="btn btn-default">Add a restaurant</a>
     </p>
@@ -26,15 +27,25 @@ angular.module('myApp')
     this.restaurants = null;
     this.cuisines = ['American', 'Chinese', 'Italian', 'Japanese'];
 
+    // this.pagination = {
+    //       currentPage: 1,
+    //       maxSize: 21
+    //   };
+
     this.getRestaurants = function() {
       restaurantService.getRestaurants()
       .then( res => {
         this.restaurants = res.data;
-        console.log(this.restaurants);
+        // this.pagination.totalItems = this.restaurants.length;
+
       });
     };
 
     this.getRestaurants();
+
+    // this.pageChanged = function() {
+    //   console.log('Page changed to: ' + this.currentPage);
+    // };
 
     this.show = function(restaurant) {
       $state.go('restaurant-show', { id: restaurant._id });
@@ -51,3 +62,4 @@ angular.module('myApp')
     };
   }
 });
+
