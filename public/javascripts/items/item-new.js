@@ -39,7 +39,7 @@ angular.module('myApp')
                ng-model="$ctrl.item.description">
       </div>
 
-      <a ui-sref="items" class="btn btn-primary">Back</a>
+      <a ng-click="$ctrl.show($ctrl.item.restaurant)" class="btn btn-primary">Back</a>
       <button type="submit" class="btn btn-success">Save</button>
     </form>
   `,
@@ -59,6 +59,10 @@ angular.module('myApp')
       .then( res => {
         $state.go('restaurant-show', { id: this.item.restaurant });
       });
+    };
+
+    this.show = function() {
+      $state.go('restaurant-show', { id: this.item.restaurant });
     };
   }
 });

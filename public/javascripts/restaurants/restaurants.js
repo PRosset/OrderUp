@@ -17,7 +17,7 @@ angular.module('myApp')
       <div class="restaurants col-md-6 col-md-offset-3">
         <p class="restaurantName"ng-click="$ctrl.show(restaurant)">{{ restaurant.title }}</p>
         <hr/>
-        <button ng-click="$ctrl.delete(restaurant)" class="deleteBtn btn btn-xs btn-danger">X</button>
+        <button ng-if="$ctrl.checkOwner(restaurant)" ng-click="$ctrl.delete(restaurant)" class="deleteBtn btn btn-xs btn-danger">X</button>
         <p class="restaurantAddress">{{ restaurant.address }}</p>
         <p><b>Hours: </b>{{ restaurant.hours }}</p>
         <p>{{ restaurant.phone }}</p>
@@ -26,7 +26,7 @@ angular.module('myApp')
     <hr/>
     <a ui-sref="restaurant-new" class="btn btn-primary">New</a>
   `,
-  controller: function(restaurantService, $state) {
+  controller: function(restaurantService, Auth, $state) {
     this.restaurants = null;
     this.cuisines = ['American', 'Chinese', 'Italian', 'Japanese'];
 
@@ -48,6 +48,10 @@ angular.module('myApp')
       .then( res => {
         this.getRestaurants();
       });
+    };
+
+    this.checkOwner = function(restaurant) {
+      return Auth.getCurrentUserSync().id === restaurant.owner;
     };
   }
 });
