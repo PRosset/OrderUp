@@ -8,6 +8,19 @@ h1, h2 {
   color: #FBFBF2;
   font-family: 'Poppins', sans-serif;
 }
+#slides_control > div{
+  height: 200px;
+}
+img{
+  width: 400px;
+}
+#slides_control {
+  position:absolute;
+  width: 400px;
+  left:50%;
+  top:20px;
+ margin-left:-200px;
+}
 
 .no-bullets {
   list-style: none;
