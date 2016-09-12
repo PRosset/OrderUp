@@ -23,7 +23,7 @@ router.post('/signup', function(req, res, next) {
     }
     req.login(user, function(err) {
       if (err) return res.status(401).json(error);
-      res.json( { email: user.local.email, name: user.local.firstName, id: user._id });
+      res.json( { email: user.local.email, name: user.firstName, id: user._id });
     });
   })(req, res, next);
 });
@@ -40,7 +40,7 @@ router.post('/login', function(req, res, next) {
     }
     req.login(user, function(err) {
       if (err) return res.status(401).json(error);
-      res.json( { email: user.local.email , name: user.local.firstName, id: user._id } );
+      res.json( { email: user.local.email , name: user.firstName, id: user._id } );
     });
   })(req, res, next);
 });

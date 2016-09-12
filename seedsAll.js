@@ -40,22 +40,21 @@ Item.remove({})
   let adele = new User();
   adele = {
     local:  {
-      firstName: 'Adele',
-      lastName: 'Adkins',
       email: 'hello@itsme.com',
       password: adele.encrypt('123')
-    }
+    },
+    firstName: 'Adele',
+    lastName: 'Adkins'
   };
 
   let andre = new User();
   andre = {
     local: {
-      firstName: 'Andre',
-      lastName: '3000',
       email: 'hey@ya.com',
       password: andre.encrypt('123')
     },
-
+    firstName: 'Andre',
+    lastName: '3000'
   };
   console.log(adele);
   console.log(andre);
@@ -190,9 +189,39 @@ Item.remove({})
     restaurant: restaurant[0]._id,
     category: 'Desserts',
     description: 'It has some choclate or something'
-  })
+  });
+  let elijayFarmEgg = new Item({
+    title: 'Elijay Farm Egg',
+    price: 13,
+    restaurant: restaurant[1]._id,
+    category: 'Appetizer',
+    description: 'Elijay farm egg, white asparagus, butterbeans, green garlic'
+  });
+  let calamari = new Item({
+    title: 'Calimari',
+    price: 11.00,
+    restaurant: restaurant[1]._id,
+    category: 'Appetizer',
+    description: 'Calamari in Sicilian tomate brodetto'
+  });
+  let risotto = new Item({
+    title: 'Green garlic Risotto',
+    price: 19,
+    restaurant: restaurant[1]._id,
+    category: 'Entree',
+    description: 'With favas, sugar snaps & vidalias'
+  });
+  let wildBoar = new Item({
+    title: 'Wild Boar & Eggplant',
+    price: 16,
+    restaurant: restaurant[1]._id,
+    category: 'Entree',
+    description: 'baked penne, pomodoro, sprout & parm salad'
+  });
+
   return Item.create([slice, sicillianSlice, mediumPizza, largePizza, sicillianPizza,
-                     salads, swFellinis, dessertFellinis]);
+                     salads, swFellinis, dessertFellinis, elijayFarmEgg, calamari,
+                     risotto, wildBoar]);
 })
 .then(function() {
   return Restaurant.find({})
