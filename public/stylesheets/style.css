@@ -5,12 +5,8 @@ body {
 }
 
 h1, h2 {
-<<<<<<< HEAD
-  color: #6B7FD7;
-=======
   color: #FBFBF2;
   font-family: 'Poppins', sans-serif;
->>>>>>> front-end
 }
 
 .no-bullets {
@@ -30,14 +26,14 @@ footer {
     background-color: red;
 }
 
-.restaurantStuff {
+.restaurantDetails {
   background-color: #5D576B;
   border-radius: 10px;
   padding: 1%;
   margin-top: 1em;
 }
 
-.menuItems {
+.items {
   background-color: #FBFBF2;
   border-radius: 10px;
   padding: 1%;
@@ -69,3 +65,73 @@ p.itemDescription {
   background: #273043;
   border-color: #FBFBF2;
 }
+
+.restaurants {
+  background-color: #FBFBF2;
+  border-radius: 10px;
+  margin-bottom: 10px;
+  border: 3px #5D576B solid;
+  box-shadow: 2px 2px 5px 0px rgba(0,0,0,0.75);
+}
+.restaurants:hover {
+  background-color: #fafafa;
+}
+
+.menuItems {
+  padding-top: 10px;
+}
+
+.restaurants hr {
+  margin: 5px;
+}
+.restaurantName {
+  font-size: 2em;
+  font-weight: 800;
+  margin: 3px 0 0 0;
+}
+
+.deleteBtn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
+
+.restaurantAddress {
+  font-weight: 400px;
+  font-size: 1.2em;
+}
+
+/*.searchBar {
+  margin-bottom: 5px;
+}*/
+
+/* The starting CSS styles for the enter animation */
+main.ng-enter {
+  transition: .6s linear all;
+  opacity:0;
+}
+
+/* The finishing CSS styles for the enter animation */
+main.ng-enter.ng-enter-active {
+  opacity:1;
+}
+
+/* now the element will fade out before it is removed from the DOM */
+/*main.ng-leave {
+  transition: .5s linear all;
+  opacity:1;
+}
+main.ng-leave.ng-leave-active {
+  opacity:0;
+}*/
+
+.footer {
+  background-color: #6B7FD7;
+  color: white;
+  text-align: right;
+  padding: 10px 20px 10px 10px;
+  font-size: 15px;
+}
+
+
+

@@ -33,12 +33,10 @@ angular.module('myApp')
           </div>
 
           <div>
-            <button class="btn btn-inverse btn-lg btn-login" type="submit">
+            <button class="btn btn-default btn-lg btn-login" type="submit">
               Login
             </button>
-            <a class="btn btn-default btn-lg btn-register" ui-sref="signup">
-              Register
-            </a>
+            <p>Not a member?  Sign up for an account <a ui-sref="signup">here</a>.</p>
           </div>
         </form>
       </div>
@@ -58,7 +56,6 @@ angular.module('myApp')
           password: this.user.password
         })
         .then(() => {
-          // Logged in, redirect to todos
           $state.go('restaurants');
         })
         .catch(err => {

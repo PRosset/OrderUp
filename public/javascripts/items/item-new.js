@@ -12,17 +12,20 @@ angular.module('myApp')
       </div>
 
       <div class="form-group">
-        <label for="title">Category</label>
+        <label for="category">Category</label>
             <select type="text"
                class="form-control"
-               name="categories">
-              <option ng-repeat="x in $ctrl.categories">{{x}}</option>
+               name="category"
+               ng-model="$ctrl.item.category">
+              <option ng-repeat="category in $ctrl.categories"
+              value="{{ category }}"> {{ category }} </option>
             </select>
       </div>
 
       <div class="form-group">
-        <label for="title">Price</label>
-        <input type="text"
+        <label for="price">Price</label>
+        <input type="number"
+               step="0.01"
                class="form-control"
                name="price"
                ng-model="$ctrl.item.price">
@@ -33,10 +36,10 @@ angular.module('myApp')
         <input type="text"
                class="form-control"
                name="description"
-
+               ng-model="$ctrl.item.description">
       </div>
 
-      <a ui-sref="items" class="btn btn-primary">Back</a>
+      <a ng-click="$ctrl.show($ctrl.item.restaurant)" class="btn btn-primary">Back</a>
       <button type="submit" class="btn btn-success">Save</button>
     </form>
   `,
@@ -45,7 +48,9 @@ angular.module('myApp')
 
     this.item = {
       title: '',
+      category: '',
       price: '',
+      description: '',
       restaurant: location.hash.split('/')[2]
     };
 
@@ -54,6 +59,10 @@ angular.module('myApp')
       .then( res => {
         $state.go('restaurant-show', { id: this.item.restaurant });
       });
+    };
+
+    this.show = function() {
+      $state.go('restaurant-show', { id: this.item.restaurant });
     };
   }
 });
