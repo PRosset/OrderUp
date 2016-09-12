@@ -1,54 +1,73 @@
-var angular = require('angular');
-var ngTouch = require('angular-touch');
-var carousel  = require('angular-carousel');
 
-angular.module('myApp')
-.component('home', {
-  template: `
-  <section class="container well text-center">
-<link href="angular-carousel.css" rel="stylesheet" type="text/css" />
-<div ng-app="app">
-  <div ng-controller="CarouselDemoCtrl" id="slides_control">
-    <div>
-
-      <carousel interval="myInterval">
-        <slide ng-repeat="slide in slides" active="slide.active">
-          <img ng-src="{{slide.image}}">
-          <div class="carousel-caption">
-            <h4>Slide {{$index+1}}</h4>
-          </div>
-        </slide>
-      </carousel>
-    </div>
-  </div>
-</div>
-<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.8/angular.min.js"></script>
-  <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/0.10.0/ui-bootstrap-tpls.min.js"></script>
-    <h1>Welcome to the</h1>
+angular.module('myApp', ['angular-carousel']);
+    .component('home', {
+template:`
+<section class="container well text-center">
     <h1>{{ $ctrl.name }}</h1>
-  </section>
-  `,
-  controller: function() {
-    this.name = 'MEAN Stack Starter App';
+</section>
+<ul rn-carousel class="image">
+  <li ng-repeat="image in sportImages">
+    <div class="layer">{{ image }}</div>
+  </li>
+  <li ng-repeat="image in sportImages">
+    <div class="layer">https://hd.unsplash.com/photo-1424847651672-bf20a4b0982b</div>
+  </li>
+</ul>
+`,
+)};
+controller: function('CarouselDemoCtrl', function ($scope) {
+  $scope.myInterval = 5000;
+  $scope.noWrapSlides = false;
+  $scope.active = 0;
+  var slides = $scope.slides = [];
+  var currIndex = 0;
+};
+  $scope.addSlide = function() {
+    var newWidth = 600 + slides.length + 1;
+    slides.push({
+      image: '//unsplash.it/' + newWidth + '/300',
+      text: ['Nice image','Awesome photograph','That is so cool','I love that'][slides.length % 4],
+      id: currIndex++
+    });
+  };
 
+  $scope.randomize = function() {
+    var indexes = generateIndexesArray();
+    assignNewIndexesToSlides(indexes);
+  };
 
-function CarouselDemoCtrl($scope){
-  $scope.myInterval = 3000;
-  $scope.slides = [
-    {
-      image:
- 'http://lorempixel.com/400/200/'
-    },
-    {
-      image: 'http://lorempixel.com/400/200/food'
-    },
-    {
-      image: 'http://lorempixel.com/400/200/sports'
-    },
-    {
-      image: 'http://lorempixel.com/400/200/people'
+  for (var i = 0; i < 4; i++) {
+    $scope.addSlide();
+  }
+
+  // Randomize logic below
+
+  function assignNewIndexesToSlides(indexes) {
+    for (var i = 0, l = slides.length; i < l; i++) {
+      slides[i].id = indexes.pop();
     }
-  ];
-}
-}
+  }
+
+  function generateIndexesArray() {
+    var indexes = [];
+    for (var i = 0; i < currIndex; ++i) {
+      indexes[i] = i;
+    }
+    return shuffle(indexes);
+  }
+ // http://stackoverflow.com/questions/962802#962890
+  function shuffle(array) {
+    var tmp, current, top = array.length;
+
+    if (top) {
+      while (--top) {
+        current = Math.floor(Math.random() * (top + 1));
+        tmp = array[current];
+        array[current] = array[top];
+        array[top] = tmp;
+      }
+    }
+
+    return array;
+  }
 });
