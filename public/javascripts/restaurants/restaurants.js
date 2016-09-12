@@ -1,21 +1,15 @@
 angular.module('myApp')
 .component('restaurants', {
   template: `
-    <h1>RESTAURANTS</h1>
     <div class="row">
-      <div class="col-lg-4 col-md-offset-4">
-        <div class="input-group">
+        <div class="col-lg-4 col-md-offset-4 input-lg">
           <input type="text" class="form-control" ng-model="search" placeholder="Search for a restaurant">
-          <span class="input-group-btn">
-            <button class="btn btn-default" type="button">cuisine</button>
-          </span>
         </div>
-      </div>
     </div>
 
-    <div id="restaurantList" class="row" ng-repeat="restaurant in $ctrl.restaurants | filter: search">
-      <div class="restaurants col-md-6 col-md-offset-3">
-        <p class="restaurantName"ng-click="$ctrl.show(restaurant)">{{ restaurant.title }}</p>
+    <div id="restaurantList" class="row">
+      <div class="restaurants col-md-6 col-md-offset-3" ng-repeat="restaurant in $ctrl.restaurants | filter: search">
+        <p class="restaurantName" ng-click="$ctrl.show(restaurant)">{{ restaurant.title }}</p>
         <hr/>
         <button ng-if="$ctrl.checkOwner(restaurant)" ng-click="$ctrl.delete(restaurant)" class="deleteBtn btn btn-xs btn-danger">X</button>
         <p class="restaurantAddress">{{ restaurant.address }}</p>
@@ -34,6 +28,7 @@ angular.module('myApp')
       restaurantService.getRestaurants()
       .then( res => {
         this.restaurants = res.data;
+        console.log(this.restaurants);
       });
     };
 
@@ -44,10 +39,9 @@ angular.module('myApp')
     };
 
     this.delete = function(restaurant) {
-      restaurantService.delete(restaurant)
-      .then( res => {
-        this.getRestaurants();
-      });
+      var removedRestaurant = this.restaurants.indexOf(restaurant);
+      this.restaurants.splice(removedRestaurant, 1);
+      restaurantService.delete(restaurant);
     };
 
     this.checkOwner = function(restaurant) {

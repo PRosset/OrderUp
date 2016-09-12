@@ -56,13 +56,9 @@ angular.module('myApp')
     };
 
     this.deleteItem = function(item) {
-      restaurantService.deleteItem(item)
-      .then( res => {
-        restaurantService.getRestaurant($stateParams.id)
-        .then( res => {
-        this.restaurantInfo = res.data;
-        });
-      });
+      var deletedItem = this.restaurantInfo.items.indexOf(item)
+      this.restaurantInfo.items.splice(deletedItem, 1);
+      restaurantService.deleteItem(item);
     };
 
     restaurantService.getRestaurant($stateParams.id)

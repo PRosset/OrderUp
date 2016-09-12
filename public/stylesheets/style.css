@@ -117,13 +117,18 @@ main.ng-enter.ng-enter-active {
 }
 
 /* now the element will fade out before it is removed from the DOM */
-/*main.ng-leave {
-  transition: .5s linear all;
-  opacity:1;
+.restaurants.ng-leave {
+  transition: .2s linear all;
+  transform: scale(1);
 }
-main.ng-leave.ng-leave-active {
-  opacity:0;
-}*/
+.restaurants.ng-leave.ng-leave-active {
+  transform: scale(0);
+}
 
-
-
+.items.ng-leave {
+  transition: .2s linear all;
+  transform: scale(1);
+}
+.items.ng-leave.ng-leave-active {
+  transform: scale(0);
+}
