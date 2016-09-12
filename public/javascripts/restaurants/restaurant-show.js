@@ -10,8 +10,8 @@ angular.module('myApp')
     </div>
 
     <div class="categories col-xs-6 col-md-offset-3">
-      <uib-tabset type="pills" active="activeItemId" ng-model="$ctrl.item.category" ng-repeat="category in $ctrl.categories">
-        <uib-tab heading="{{category}}" ng-click="$ctrl.sendCategory(category)"></uib-tab>
+      <uib-tabset type="pills" active="activeItemId" ng-model="$ctrl.item.category">
+        <uib-tab class="pillButton" ng-repeat="category in $ctrl.categories" heading="{{category}}" ng-click="$ctrl.sendCategory(category)"></uib-tab>
       </uib-tabset>
     </div>
 
@@ -71,3 +71,11 @@ angular.module('myApp')
     });
   }
 });
+
+
+
+    // <div class="categories col-xs-6 col-md-offset-3">
+    //   <uib-tabset type="pills" active="activeItemId" ng-model="$ctrl.item.category" ng-repeat="category in $ctrl.categories">
+    //     <uib-tab heading="{{category}}" ng-click="$ctrl.sendCategory(category)"></uib-tab>
+    //   </uib-tabset>
+    // </div>
