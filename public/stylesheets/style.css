@@ -26,7 +26,7 @@ footer {
     background-color: red;
 }
 
-.restaurantStuff {
+.restaurantDetails {
   background-color: #5D576B;
   border-radius: 10px;
   padding: 1%;
@@ -107,7 +107,7 @@ p.itemDescription {
 
 /* The starting CSS styles for the enter animation */
 main.ng-enter {
-  transition: .5s linear all;
+  transition: .6s linear all;
   opacity:0;
 }
 

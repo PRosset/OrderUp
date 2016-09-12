@@ -1,7 +1,7 @@
 angular.module('myApp')
 .component('restaurantShow', {
   template: `
-    <div class="restaurantStuff">
+    <div class="restaurantDetails">
       <h3>{{ $ctrl.restaurantInfo.restaurant.title }}</h3>
       <p><b>Cuisine: </b>{{ $ctrl.restaurantInfo.restaurant.cuisine }}</p>
       <p><b>Address: </b>{{ $ctrl.restaurantInfo.restaurant.address }}</p>
@@ -18,7 +18,7 @@ angular.module('myApp')
     <div class="menuItems">
       <div class="items" ng-repeat="item in $ctrl.restaurantInfo.items | orderBy: 'category' | filter : $ctrl.search ">
         <h4><a class="itemTitle" ng-click="$ctrl.show(item)">{{ item.title }}</a>
-          <button ng-click="$ctrl.deleteItem(item)" class="btn btn-xs btn-danger">X</button>
+          <button ng-if="$ctrl.checkOwner(restaurant)" ng-click="$ctrl.deleteItem(item)" class="btn btn-xs btn-danger">X</button>
         </h4>
         <p class="itemDescription"><b>Price: </b>{{ item.price | currency}}</p>
         <p class="itemDescription"><b>Description: </b>{{ item.description }}</p>
@@ -27,10 +27,10 @@ angular.module('myApp')
     </div>
 
     <a ui-sref="restaurants" class="btn btn-primary">Back</a>
-    <a ng-click="$ctrl.edit(restaurant)" class="btn btn-warning">Edit</a>
-    <a ng-click="$ctrl.newItem(restaurant)" class="btn btn-warning">New Menu Item</a>
+    <a ng-if="$ctrl.checkOwner(restaurant)" ng-click="$ctrl.edit(restaurant)" class="btn btn-warning">Edit</a>
+    <a ng-if="$ctrl.checkOwner(restaurant)" ng-click="$ctrl.newItem(restaurant)" class="btn btn-warning">New Menu Item</a>
   `,
-  controller: function(restaurantService, $state, $stateParams) {
+  controller: function(restaurantService, Auth, $state, $stateParams) {
     this.restaurant = null;
     this.categories = ['Appetizer', 'Entree', 'Sides', 'Desserts', 'Drinks'];
     this.activeItemId = 0;
@@ -69,6 +69,10 @@ angular.module('myApp')
     .then( res => {
       this.restaurantInfo = res.data;
     });
+
+    this.checkOwner = function(restaurant) {
+      return Auth.getCurrentUserSync().id === this.restaurantInfo.restaurant.owner;
+    };
   }
 });
 
