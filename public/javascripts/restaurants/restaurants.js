@@ -13,9 +13,9 @@ angular.module('myApp')
       </div>
     </div>
 
-    <div id="restaurantList" class="row" ng-repeat="restaurant in $ctrl.restaurants | filter: search">
+    <div id="restaurantList" class="row" ng-repeat="restaurant in $ctrl.restaurants | filter: search ">
       <div class="restaurants col-md-6 col-md-offset-3">
-        <p class="restaurantName"ng-click="$ctrl.show(restaurant)">{{ restaurant.title }}</p>
+        <p class="restaurantName" ng-click="$ctrl.show(restaurant)">{{ restaurant.title }}</p>
         <hr/>
         <button ng-if="$ctrl.checkOwner(restaurant)" ng-click="$ctrl.delete(restaurant)" class="deleteBtn btn btn-xs btn-danger">X</button>
         <p class="restaurantAddress">{{ restaurant.address }}</p>
@@ -23,6 +23,7 @@ angular.module('myApp')
         <p>{{ restaurant.phone }}</p>
       </div>
     </div>
+
     <hr/>
   <div class="footer navbar-fixed-bottom">
     <p>Own a spot? <a ui-sref="restaurant-new" class="btn btn-default">Add a restaurant</a>
@@ -33,14 +34,24 @@ angular.module('myApp')
     this.restaurants = null;
     this.cuisines = ['American', 'Chinese', 'Italian', 'Japanese'];
 
+    // this.pagination = {
+    //       currentPage: 1,
+    //       maxSize: 21
+    //   };
+
     this.getRestaurants = function() {
       restaurantService.getRestaurants()
       .then( res => {
         this.restaurants = res.data;
+        // this.pagination.totalItems = this.restaurants.length;
       });
     };
 
     this.getRestaurants();
+
+    // this.pageChanged = function() {
+    //   console.log('Page changed to: ' + this.currentPage);
+    // };
 
     this.show = function(restaurant) {
       $state.go('restaurant-show', { id: restaurant._id });
@@ -58,3 +69,4 @@ angular.module('myApp')
     };
   }
 });
+
