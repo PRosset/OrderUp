@@ -76,7 +76,7 @@ p.itemDescription {
 .restaurants {
   background-color: #FBFBF2;
   border-radius: 10px;
-  margin-bottom: 10px;
+  margin-bottom: 20px;
   border: 3px #5D576B solid;
   box-shadow: 2px 2px 5px 0px rgba(0,0,0,0.75);
 }
