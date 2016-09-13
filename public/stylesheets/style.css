@@ -73,6 +73,10 @@ p.itemDescription {
   border-color: #FBFBF2;
 }
 
+.navbar-default a {
+  color: white;
+}
+
 .restaurants {
   background-color: #FBFBF2;
   border-radius: 10px;
@@ -181,3 +185,9 @@ main.ng-enter.ng-enter-active {
   font-size: 20px;
 }
 
+.orderUp {
+  font-family: 'Pacifico', cursive;
+  color: white;
+  font-size: 15px;
+  text-align: center;
+}
