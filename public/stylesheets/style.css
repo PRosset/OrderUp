@@ -161,8 +161,8 @@ p.navbar-brand.orderUp{
 }
 
 .restaurants {
-  background-color: #FBFBF2;
-  color: #273043;
+  background-color: #5D576B;
+  color: #fafafa;
   border-radius: 10px;
   margin-bottom: 20px;
   margin-top: 20px;
@@ -171,10 +171,14 @@ p.navbar-brand.orderUp{
 }
 
 .restaurants:hover {
-  background-color: #fafafa;
+  background-color: #273043;
   border-color: #6B7FD7;
   color: #6B7FD7;
 
+}
+.cover {
+  background-color: rgba(0,0,0,.5);
+  background-size: 100% 100%;
 }
 
 .menuItems {

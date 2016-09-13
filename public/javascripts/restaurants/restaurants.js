@@ -10,13 +10,15 @@ angular.module('myApp')
     <br>
     <div id="restaurantList" class="row">
       <div class="col-md-9 col-md-offset-1">
-        <div class="restaurants col-md-5 col-md-offset-1" ng-click="$ctrl.show(restaurant)" ng-repeat="restaurant in $ctrl.restaurants | orderBy | filter: search">
-          <p class="restaurantName">{{ restaurant.title }}</p>
-          <hr/>
-          <button ng-if="$ctrl.checkOwner(restaurant)" ng-click="$ctrl.delete(restaurant)" class="deleteBtn btn btn-xs btn-danger">X</button>
-          <p class="restaurantAddress">{{ restaurant.address }}</p>
-          <p><b>Hours: </b>{{ restaurant.hours }}</p>
-          <p>{{ restaurant.phone }}</p>
+        <div class="restaurants col-md-5 col-md-offset-1" ng-click="$ctrl.show(restaurant)" ng-repeat="restaurant in $ctrl.restaurants | filter: search" style="background-image: url({{restaurant.image}}); background-size: 100%;">
+          <div class="cover">
+            <p class="restaurantName">{{ restaurant.title }}</p>
+            <hr/>
+            <button ng-if="$ctrl.checkOwner(restaurant)" ng-click="$ctrl.delete(restaurant)" class="deleteBtn btn btn-xs btn-danger">X</button>
+            <p class="restaurantAddress">{{ restaurant.address }}</p>
+            <p><b>Hours: </b>{{ restaurant.hours }}</p>
+            <p>{{ restaurant.phone }}</p>
+          </div>
         </div>
       </div>
     </div>

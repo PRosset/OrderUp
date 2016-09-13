@@ -71,7 +71,8 @@ Item.remove({})
     cuisine: 'Italian',
     address: '123 Ponce de Leon, Atlanta, GA 30308',
     phone: '(404) 123-4567',
-    hours: 'M-F 10AM-2AM'
+    hours: 'M-F 10AM-2AM',
+    image: '/images/pizza.jpeg'
   });
   let boccalupo = new Restaurant({
     title: 'Bocca Lupo',
@@ -79,7 +80,8 @@ Item.remove({})
     cuisine: 'Italian',
     address: '753 Edgewood Ave NE, Atlanta, GA ',
     phone: '(404) 577-2332',
-    hours: 'M-F 10AM-10PM'
+    hours: 'M-F 10AM-10PM',
+    image: '/images/pasta.jpeg'
   });
   let stapleHouse = new Restaurant({
     title: 'Staple House',
@@ -87,7 +89,8 @@ Item.remove({})
     cuisine: 'American',
     address: '541 Edgewood Ave SE, Atlanta, GA ',
     phone: '(404) 524-5005',
-    hours: 'M-F 10AM-10PM'
+    hours: 'M-F 10AM-10PM',
+    image: '/images/staplehouse.jpeg'
   });
   let gunShow = new Restaurant({
     title: 'Gun Show',
@@ -95,7 +98,8 @@ Item.remove({})
     cuisine: 'Eclectic',
     address: '924 Garrett St, Atlanta, GA',
     phone: '(404) 380-1886',
-    hours: 'T-S 6PM-9PM'
+    hours: 'T-S 6PM-9PM',
+    image: '/images/gunshow.jpeg'
   });
   let optimist = new Restaurant({
     title: 'The Optimist',
@@ -103,7 +107,8 @@ Item.remove({})
     cuisine: 'Seafood',
     address: '914 Howell Mill Rd, Atlanta, GA',
     phone: '(404) 477-6260',
-    hours: 'M-S 11:30AM-10PM'
+    hours: 'M-S 11:30AM-10PM',
+    image: '/images/optimist.jpeg'
   });
   let taqueriaDelSol = new Restaurant({
     title: 'Taqueria Del Sol',
@@ -111,7 +116,8 @@ Item.remove({})
     cuisine: 'Mexican',
     address: '1200 Howell Mill Rd NW, Atlanta, GA',
     phone: '(404) 352-5811',
-    hours: 'M-S 11AM-10PM'
+    hours: 'M-S 11AM-10PM',
+    image: '/images/nacho.jpeg'
   });
   let sos = new Restaurant({
     title: 'S.O.S. Tiki Bar',
@@ -119,7 +125,8 @@ Item.remove({})
     cuisine: 'Cocktail Bar',
     address: '340 Church St, Decatur, GA',
     phone: '(404) 377-9308',
-    hours: 'W-S 6PM-2AM'
+    hours: 'W-S 6PM-2AM',
+    image: '/images/sos.jpeg'
   });
   let mcdonalds = new Restaurant({
     title: "McDonald's",
@@ -127,7 +134,8 @@ Item.remove({})
     cuisine: 'Fast Food',
     address: '526 Ponce De Leon Ave NE, Atlanta, GA',
     phone: '(404) 874-7848',
-    hours: 'All day, Err Day'
+    hours: 'All day, Err Day',
+    image: '/images/mcdonalds.jpeg'
   });
 
   console.log(fellinis);
