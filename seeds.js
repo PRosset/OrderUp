@@ -40,22 +40,21 @@ Item.remove({})
   let adele = new User();
   adele = {
     local:  {
-      firstName: 'Adele',
-      lastName: 'Adkins',
       email: 'hello@itsme.com',
       password: adele.encrypt('123')
-    }
+    },
+    firstName: 'Adele',
+    lastName: 'Adkins'
   };
 
   let andre = new User();
   andre = {
     local: {
-      firstName: 'Andre',
-      lastName: '3000',
       email: 'hey@ya.com',
       password: andre.encrypt('123')
     },
-
+    firstName: 'Andre',
+    lastName: '3000'
   };
   console.log(adele);
   console.log(andre);

@@ -1,5 +1,4 @@
 body {
-    padding: 50px;
     font: 14px 'Poppins', sans-serif;
     background-color: #B5DFCA;
 }
@@ -18,12 +17,30 @@ img {
 #slides_control {
     display: flex;
     justify-content: center;
-    /*position: absolute;*/
+    position: absolute;
     padding: none;
-    /*margin: 1px;*/
+    margin: 1px;
     height: 100%;
     width: 100%;
+
 }
+/*#slides_control {
+  position: fixed;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+}
+#slides_control img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  min-width: 50%;
+  min-height: 50%;
+}*/
 
 .no-bullets {
     list-style: none;
@@ -43,17 +60,24 @@ footer {
 }
 
 .restaurantDetails {
-    background-color: #5D576B;
-    border-radius: 10px;
-    padding: 1%;
-    margin-top: 1em;
+  background-color: #5D576B;
+  border-radius: 10px;
+  padding: 1%;
+  margin-top: 1em;
+  margin-bottom: 1em;
+  box-shadow: 2px 5px 15px 0px rgba(0,0,0,0.75);
+}
+.restaurantDetails p {
+  color: #fafafa;
 }
 
 .items {
-    background-color: #FBFBF2;
-    border-radius: 10px;
-    padding: 1%;
-    margin-top: 1em;
+  background-color: #FBFBF2;
+  border-radius: 10px;
+  padding: 1%;
+  margin-top: 1em;
+  overflow-y: scroll;
+
 }
 
 h3 {
@@ -64,9 +88,10 @@ h3 {
 }
 
 a.itemTitle {
-    text-decoration: none;
-    font-size: 1em;
-    color: #6B7FD7;
+  text-decoration: none;
+  font-size: 1em;
+  color: #6B7FD7;
+  margin-bottom: 2em;
 }
 
 a.itemTitle:hover {
@@ -82,16 +107,23 @@ p.itemDescription {
     border-color: #FBFBF2;
 }
 
+.navbar-default a {
+  color: white;
+}
+
 .restaurants {
-    background-color: #FBFBF2;
-    border-radius: 10px;
-    margin-bottom: 10px;
-    border: 3px #5D576B solid;
-    box-shadow: 2px 2px 5px 0px rgba(0, 0, 0, 0.75);
+  background-color: #FBFBF2;
+  border-radius: 10px;
+  margin-bottom: 20px;
+  border: 3px #5D576B solid;
+  box-shadow: 2px 2px 5px 0px rgba(0,0,0,0.75);
 }
 
 .restaurants:hover {
-    background-color: #fafafa;
+  background-color: #fafafa;
+  border-color: #6B7FD7;
+  color: #6B7FD7;
+
 }
 
 .menuItems {
@@ -118,14 +150,7 @@ p.itemDescription {
     font-weight: 400px;
     font-size: 1.2em;
 }
-
-
-/*.searchBar {
-  margin-bottom: 5px;
-}*/
-
-
-/* The starting CSS styles for the enter animation */
+/* ANIMATIONS */
 
 main.ng-enter {
     transition: .6s linear all;
@@ -133,23 +158,26 @@ main.ng-enter {
 }
 
 
-/* The finishing CSS styles for the enter animation */
-
 main.ng-enter.ng-enter-active {
     opacity: 1;
 }
-
-
-/* now the element will fade out before it is removed from the DOM */
-
-
-/*main.ng-leave {
-  transition: .5s linear all;
-  opacity:1;
+.restaurants.ng-enter {
+  transition: .2s linear all;
+  opacity: 0;
+  transform: translateY(30px);
 }
-main.ng-leave.ng-leave-active {
-  opacity:0;
-}*/
+.restaurants.ng-enter.ng-enter-active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.restaurants.ng-leave {
+  transition: .2s ease-in all;
+  opacity: 1;
+}
+.restaurants.ng-leave.ng-leave-active {
+  opacity: 0;
+}
 
 .footer {
     background-color: #6B7FD7;
@@ -158,3 +186,45 @@ main.ng-leave.ng-leave-active {
     padding: 10px 20px 10px 10px;
     font-size: 15px;
 }
+
+.items.ng-enter {
+  transition: .2s linear all;
+  opacity: 0;
+  transform: translateY(30px);
+}
+.items.ng-enter.ng-enter-active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.items.ng-leave {
+  transition: .2s linear all;
+  opacity: 1;
+}
+.items.ng-leave.ng-leave-active {
+  opacity: 0;
+}
+
+
+.itemShow {
+  background-color: #FBFBF2;
+  border-radius: 10px;
+  padding: 1%;
+  margin-top: 1em;
+  margin-bottom: 1em;
+  border: 3px #5D576B solid;
+  box-shadow: 2px 2px 5px 0px rgba(0,0,0,0.75);
+}
+
+.itemTitle {
+  color: #6B7FD7;
+  font-size: 20px;
+}
+
+.orderUp {
+  font-family: 'Pacifico', cursive;
+  color: white;
+  font-size: 15px;
+  text-align: center;
+}
+
