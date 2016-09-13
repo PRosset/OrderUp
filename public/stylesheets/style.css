@@ -114,20 +114,59 @@ p.itemDescription {
 }
 
 .navbar-default {
-    background: #273043;
-    border-color: #FBFBF2;
+  background: #273043;
+  border: 3px solid #6B7FD7;
+}
+
+ul.nav li.active a {
+    color: #6B7FD7 !important;
 }
 
 .navbar-default a {
+  color: #FBFBF2;
+}
+
+.nav.navbar-nav.navbar-right {
+  margin-right: 5px;
+}
+
+.navbar.navbar-fixed-top.navbar-default li a {
+  color: #FBFBF2;
+}
+
+.navbar.navbar-fixed-top.navbar-default li {
+  color: #FBFBF2;
+}
+
+.navbar.navbar-fixed-top.navbar-default p {
+  color: #FBFBF2;
+}
+
+.navbar-brand {
+    position: absolute;
+    width: 100%;
+    text-align: center;
+    margin:0 auto;
+    z-index: -1 !important;
+}
+
+p.navbar-brand.orderUp{
+  color: #FBFBF2;
+  font-size: 25px;
+}
+
+.orderUp {
+  font-family: 'Pacifico', cursive;
   color: white;
 }
 
 .restaurants {
   background-color: #FBFBF2;
+  color: #273043;
   border-radius: 10px;
   margin-bottom: 20px;
   margin-top: 20px;
-  border: 3px #5D576B solid;
+  border: 3px #273043 solid;
   box-shadow: 2px 2px 5px 0px rgba(0,0,0,0.75);
 }
 
@@ -242,4 +281,5 @@ main.ng-enter.ng-enter-active {
   font-size: 15px;
   text-align: center;
 }
+
 
