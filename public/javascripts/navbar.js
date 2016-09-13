@@ -4,13 +4,13 @@ angular.module('myApp')
     <nav class="navbar navbar-fixed-top navbar-default">
       <div class="container-fluid">
         <div class="navbar-header">
+          <p class="navbar-brand orderUp">Order Up</p>
         </div>
-
+        </div>
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-6">
           <ul class="nav navbar-nav">
             <li ng-class="{ active: $ctrl.$state.includes('home') }" ><a ui-sref="home">Home</a></li>
             <li ng-class="{ active: $ctrl.$state.includes('about') }" ><a ui-sref="about">About</a></li>
-            <li class="orderUp" ><a ui-sref="home">Order Up</a></li>
             <li ng-show="$ctrl.Auth.isLoggedIn()" ng-class="{ active: $ctrl.$state.includes('restaurants') }" ><a ui-sref="restaurants">Restaurants</a></li>
           </ul>
           <ul class="nav navbar-nav navbar-right">
@@ -35,5 +35,3 @@ angular.module('myApp')
     };
   }
 });
-
-// <li ng-show="$ctrl.Auth.isLoggedIn()" ng-class="{ active: $ctrl.$state.includes('todos') }" ><a ui-sref="todos">Todos</a></li>

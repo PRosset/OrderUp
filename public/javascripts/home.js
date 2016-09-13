@@ -5,27 +5,7 @@ angular.module('myApp')
   <section class="container well text-center">
     <h1>{{ $ctrl.name }}</h1>
   </section>
-<div ng-controller="CarouselDemoCtrl">
-  <div style="height: 305px">
-    <div uib-carousel active="active" interval="myInterval" no-wrap="noWrapSlides">
-      <div uib-slide ng-repeat="slide in slides track by slide.id" index="slide.id">
-        <img ng-src="{{slide.image}}" style="margin:auto;">
-        <div class="carousel-caption">
-          <h4>Slide {{slide.id}}</h4>
-          <p>{{slide.text}}</p>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div class="row">
-    <div class="col-md-6">
-      </div>
-    </div>
-    <div class="col-md-6">
-    </div>
-  </div>
-</div>
-</section>
+
 
   `,
             controller: function($scope) {
