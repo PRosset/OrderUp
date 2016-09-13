@@ -8,13 +8,15 @@ angular.module('myApp')
     </div>
 
     <div id="restaurantList" class="row">
-      <div class="restaurants col-md-6 col-md-offset-3" ng-click="$ctrl.show(restaurant)" ng-repeat="restaurant in $ctrl.restaurants | filter: search">
-        <p class="restaurantName">{{ restaurant.title }}</p>
-        <hr/>
-        <button ng-if="$ctrl.checkOwner(restaurant)" ng-click="$ctrl.delete(restaurant)" class="deleteBtn btn btn-xs btn-danger">X</button>
-        <p class="restaurantAddress">{{ restaurant.address }}</p>
-        <p><b>Hours: </b>{{ restaurant.hours }}</p>
-        <p>{{ restaurant.phone }}</p>
+      <div class="col-md-10 col-md-offset-1">
+        <div class="restaurants col-md-6" ng-click="$ctrl.show(restaurant)" ng-repeat="restaurant in $ctrl.restaurants | filter: search">
+          <p class="restaurantName">{{ restaurant.title }}</p>
+          <hr/>
+          <button ng-if="$ctrl.checkOwner(restaurant)" ng-click="$ctrl.delete(restaurant)" class="deleteBtn btn btn-xs btn-danger">X</button>
+          <p class="restaurantAddress">{{ restaurant.address }}</p>
+          <p><b>Hours: </b>{{ restaurant.hours }}</p>
+          <p>{{ restaurant.phone }}</p>
+        </div>
       </div>
     </div>
 
