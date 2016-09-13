@@ -78,16 +78,21 @@ p.itemDescription {
 }
 
 .restaurants {
-  background-color: #FBFBF2;
+  background-color: #5D576B;
+  color: #fafafa;
   border-radius: 10px;
   margin-bottom: 20px;
   border: 3px #5D576B solid;
   box-shadow: 2px 2px 5px 0px rgba(0,0,0,0.75);
 }
 .restaurants:hover {
-  background-color: #fafafa;
+  background-color: #273043;
   border-color: #6B7FD7;
   color: #6B7FD7;
+}
+.cover {
+  background-color: rgba(0,0,0,.5);
+  background-size: 100% 100%;
 }
 
 .menuItems {
