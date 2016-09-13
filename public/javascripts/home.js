@@ -2,21 +2,19 @@
 angular.module('myApp')
     .component('home', {
         template: `
-                <div id="outerslide">
-                    <div id="slides_control" uib-carousel active="active" no-wrap="noWrapSlides">
-                    <carousel-interval="myInterval"
-                        <div uib-slide ng-repeat ="slide in $ctrl.slides" index="slide.id">
-                             <div class="carousel-caption">
+                  <div id="slides_control" uib-carousel active="active" carousel interval= "3750" no-wrap="noWrapSlides">
+                          <div uib-slide ng-repeat ="slide in $ctrl.slides" index="slide.id">
+                              <img ng-src="{{slide.image}}">
+                              <div class="carousel-caption">
                                 <h3>Explore</h4>
-                            </div>
-                            <img ng-src="{{slide.image}}">
-                        </div>
-                    </div>
-                </div>
+                             </div>
+                          </div>
+                    </carousel>
+                  </div>
   `,
         controller: function() {
             this.name = 'Order Up';
-            this.myInterval = 3000;
+            this.myInterval = " ";
             this.noWrapSlides = false;
             this.active = 0;
             this.slides = [
