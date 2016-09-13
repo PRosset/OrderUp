@@ -43,6 +43,10 @@ footer {
   border-radius: 10px;
   padding: 1%;
   margin-top: 1em;
+}
+
+.scrollMenu {
+  height: 450px;
   overflow-y: scroll;
 }
 
@@ -81,6 +85,7 @@ p.itemDescription {
   background-color: #FBFBF2;
   border-radius: 10px;
   margin-bottom: 20px;
+  margin-top: 20px;
   border: 3px #5D576B solid;
   box-shadow: 2px 2px 5px 0px rgba(0,0,0,0.75);
 }
@@ -97,6 +102,11 @@ p.itemDescription {
 .restaurants hr {
   margin: 5px;
 }
+
+.restaurantDetails hr {
+  margin: 5px;
+}
+
 .restaurantName {
   font-size: 2em;
   font-weight: 800;

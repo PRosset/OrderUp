@@ -11,9 +11,11 @@ angular.module('myApp')
         <a ng-if="$ctrl.checkOwner(restaurant)" ng-click="$ctrl.newItem(restaurant)" class="btn btn-warning">New Menu Item</a>
       </div>
     </div>
+
     <div class="row">
       <div class="restaurantDetails col-md-3">
         <h3>{{ $ctrl.restaurantInfo.restaurant.title }}</h3>
+        <hr/>
         <p><b>Cuisine: </b>{{ $ctrl.restaurantInfo.restaurant.cuisine }}</p>
         <p><b>Address: </b>{{ $ctrl.restaurantInfo.restaurant.address }}</p>
         <p><b>Phone: </b>{{ $ctrl.restaurantInfo.restaurant.phone }}</p>
@@ -30,13 +32,14 @@ angular.module('myApp')
             </div>
           </div>
         </div>
-
-        <div class="items" ng-repeat="item in $ctrl.restaurantInfo.items | orderBy: 'category' | filter : $ctrl.search ">
-          <h4><a class="itemTitle" ng-click="$ctrl.show(item)">{{ item.title }}</a>
-            <button ng-if="$ctrl.checkOwner(restaurant)" ng-click="$ctrl.deleteItem(item)" class="btn btn-xs btn-danger">X</button>
-          </h4>
-          <p class="itemDescription">{{ item.description }}</p>
-          <p class="itemDescription">{{ item.price | currency}}</p>
+        <div class="scrollMenu">
+          <div class="items" ng-repeat="item in $ctrl.restaurantInfo.items | orderBy: 'category' | filter : $ctrl.search ">
+            <h4><a class="itemTitle" ng-click="$ctrl.show(item)">{{ item.title }}</a>
+              <button ng-if="$ctrl.checkOwner(restaurant)" ng-click="$ctrl.deleteItem(item)" class="btn btn-xs btn-danger">X</button>
+            </h4>
+            <p class="itemDescription">{{ item.description }}</p>
+            <p class="itemDescription">{{ item.price | currency}}</p>
+          </div>
         </div>
       </div>
     </div>
