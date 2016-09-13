@@ -1,6 +1,7 @@
 angular.module('myApp')
 .component('itemEdit', {
   template: `
+  <div class="col-md-10 col-md-offset-1">
     <h3>EDIT ITEM</h3>
 
     <form ng-submit="$ctrl.save()">
@@ -44,6 +45,7 @@ angular.module('myApp')
       <a ng-click="$ctrl.show()" class="btn btn-primary">Back</a>
       <button type="submit" class="btn btn-success">Save</button>
     </form>
+  </div>
   `,
   controller: function(itemService, $state, $stateParams) {
     this.item = null;
