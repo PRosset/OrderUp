@@ -116,7 +116,8 @@ p.itemDescription {
 
 .navbar-default {
   background: #273043;
-  border: 3px solid #6B7FD7;
+  border-top: 3px solid #6B7FD7;
+  border-bottom: 3px solid #6B7FD7;
 }
 
 ul.nav li.active a {
