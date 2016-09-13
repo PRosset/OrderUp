@@ -10,7 +10,7 @@ angular.module('myApp')
     <br>
     <div id="restaurantList" class="row">
       <div class="col-md-9 col-md-offset-1">
-        <div class="restaurants col-md-5 col-md-offset-1" ng-click="$ctrl.show(restaurant)" ng-repeat="restaurant in $ctrl.restaurants | filter: search | rPagination : $ctrl.paginationSettings.currentPage : $ctrl.paginationSettings.recordsPerPage ">
+        <div class="restaurants col-md-5 col-md-offset-1" ng-click="$ctrl.show(restaurant)" ng-repeat="restaurant in $ctrl.restaurants | orderBy | filter: search | rPagination : $ctrl.paginationSettings.currentPage : $ctrl.paginationSettings.recordsPerPage ">
           <p class="restaurantName">{{ restaurant.title }}</p>
           <hr/>
           <button ng-if="$ctrl.checkOwner(restaurant)" ng-click="$ctrl.delete(restaurant)" class="deleteBtn btn btn-xs btn-danger">X</button>
