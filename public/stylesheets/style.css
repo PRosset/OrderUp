@@ -111,6 +111,14 @@ footer {
   color: #fafafa;
 }
 
+.pillButton {
+  border-radius: 5px;
+}
+
+uib-tabset.a.active {
+  color: black;
+}
+
 .items {
   background-color: #FBFBF2;
   border-radius: 10px;
@@ -155,7 +163,7 @@ p.itemDescription {
 }
 
 ul.nav li.active a {
-    color: #6B7FD7 !important;
+    color: white !important;
 }
 
 .navbar-default a {
