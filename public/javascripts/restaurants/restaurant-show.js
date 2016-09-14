@@ -39,7 +39,7 @@ angular.module('myApp')
             <h4><p class="itemTitle" ng-if="!$ctrl.checkOwner(restaurant)">{{ item.title }}</p>
               <button ng-if="$ctrl.checkOwner(restaurant)" ng-click="$ctrl.deleteItem(item)" class="btn btn-xs btn-danger">X</button>
             </h4>
-            <p class="itemDescription">{{ item.description }}</p>
+            <p id="descriptHide" class="itemDescription">{{ item.description }}</p>
             <p class="itemDescription">{{ item.price | currency}}</p>
           </div>
         </div>
