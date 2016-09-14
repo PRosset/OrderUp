@@ -60,7 +60,7 @@ angular.module('myApp')
 
 
     this.show = function(item) {
-      $state.go('item-show', { id: item._id });
+      $state.go('item-show', { id: item._id, owner: this.restaurantInfo.restaurant.owner });
     };
 
     this.edit = function() {

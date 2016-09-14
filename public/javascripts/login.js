@@ -36,6 +36,8 @@ angular.module('myApp')
             <button class="btn btn-default btn-lg btn-login" type="submit">
               Login
             </button>
+            <br>
+            <br>
             <p>Not a member?  Sign up for an account <a ui-sref="signup">here</a>.</p>
           </div>
         </form>
