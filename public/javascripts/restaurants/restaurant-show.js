@@ -34,7 +34,8 @@ angular.module('myApp')
         </div>
         <div class="scrollMenu">
           <div class="items" ng-repeat="item in $ctrl.restaurantInfo.items | orderBy: 'category' | filter : $ctrl.search ">
-            <h4><a class="itemTitle" ng-click="$ctrl.show(item)">{{ item.title }}</a>
+            <h4><a class="itemTitle" ng-if="$ctrl.checkOwner(restaurant)" ng-click="$ctrl.show(item)">{{ item.title }}</a>
+            <h4><p class="itemTitle" ng-if="!$ctrl.checkOwner(restaurant)">{{ item.title }}</p>
               <button ng-if="$ctrl.checkOwner(restaurant)" ng-click="$ctrl.deleteItem(item)" class="btn btn-xs btn-danger">X</button>
             </h4>
             <p class="itemDescription">{{ item.description }}</p>
@@ -60,7 +61,7 @@ angular.module('myApp')
 
 
     this.show = function(item) {
-      $state.go('item-show', { id: item._id });
+      $state.go('item-show', { id: item._idn});
     };
 
     this.edit = function() {
