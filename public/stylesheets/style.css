@@ -145,9 +145,18 @@ uib-tabset.a.active {
 
 
 .scrollMenu {
-  height: 450px;
+  height: 55vh;
+  background-color: #5D576B;
   overflow-y: scroll;
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
 
+}
+.categories {
+  padding: 20px 0;
+  background-color: #5D576B;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
 }
 
 h3 {
