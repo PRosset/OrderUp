@@ -28,7 +28,7 @@ angular.module('myApp')
           <div class="row">
             <div class="col-md-10 col-md-offset-1">
               <uib-tabset type="pills" active="activeItemId" ng-model="$ctrl.item.category">
-                <uib-tab class="pillButton" ng-repeat="category in $ctrl.categories" heading="{{category.title}}" ng-click="$ctrl.sendCategory(category.searchParam)"></uib-tab>
+                <uib-tab class="pillButton btn-default" ng-repeat="category in $ctrl.categories" heading="{{category.title}}" ng-click="$ctrl.sendCategory(category.searchParam)"></uib-tab>
               </uib-tabset>
             </div>
           </div>
