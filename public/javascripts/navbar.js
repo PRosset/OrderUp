@@ -7,7 +7,7 @@ angular.module('myApp')
           <p class="navbar-brand orderUp">Order Up</p>
         </div>
         </div>
-        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-6">
+        <div>
           <ul class="nav navbar-nav">
             <li ng-class="{ active: $ctrl.$state.includes('home') }" ><a ui-sref="home">Home</a></li>
             <li ng-class="{ active: $ctrl.$state.includes('about') }" ><a ui-sref="about">About</a></li>

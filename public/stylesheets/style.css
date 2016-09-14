@@ -67,6 +67,35 @@ footer {
     background-color: red;
 }
 
+.aboutHeader {
+  font-size: 30px;
+}
+
+.developers {
+  background-color: #FBFBF2;
+  border: 3px solid #273043;
+  border-radius: 10px;
+  box-shadow: 2px 5px 15px 0px rgba(0,0,0,0.75);
+  margin-bottom: 20px;
+}
+
+.dev {
+  margin-top: 40px;
+}
+
+.devPic {
+  max-height: 200px;
+  width: auto;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  border-radius: 30px;
+  border: 3px solid #273043;
+}
+
+.email {
+  font-size:
+}
+
 .restaurantDetails {
   background-color: #5D576B;
   color: #fafafa;
@@ -297,4 +326,13 @@ main.ng-enter.ng-enter-active {
   text-align: center;
 }
 
+@media only screen and (max-width: 770px) {
+    p.navbar-brand.orderUp{
+    font-size: 20px;
+  }
 
+    .navbar-brand {
+      text-align: left;
+      z-index: -1 !important;
+  }
+}

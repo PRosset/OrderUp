@@ -65,7 +65,7 @@ angular.module('myApp')
 
 
     this.show = function(item) {
-      $state.go('item-show', { id: item._idn});
+      $state.go('item-show', { id: item._id});
     };
 
     this.edit = function() {
@@ -93,10 +93,3 @@ angular.module('myApp')
   }
 });
 
-
-
-    // <div class="categories col-xs-6 col-md-offset-3">
-    //   <uib-tabset type="pills" active="activeItemId" ng-model="$ctrl.item.category" ng-repeat="category in $ctrl.categories">
-    //     <uib-tab heading="{{category}}" ng-click="$ctrl.sendCategory(category)"></uib-tab>
-    //   </uib-tabset>
-    // </div>

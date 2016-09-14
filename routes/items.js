@@ -55,7 +55,7 @@ router.get('/:id', authenticate, function(req, res, next) {
   .then(function(item) {
     if (!item) return next(makeError(res, 'Document not found', 404));
     // if (!req.user._id.equals(item.user)) return next(makeError(res, 'You do not own that item', 401));
-    res.json(item);
+      res.json(item);
   }, function(err) {
     return next(err);
   });

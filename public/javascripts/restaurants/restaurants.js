@@ -35,8 +35,7 @@ angular.module('myApp')
   `,
   controller: function(restaurantService, Auth, $state) {
     this.restaurants = [];
-    this.cuisines = ['American', 'Chinese', 'Italian', 'Japanese'];
-
+    // this.cuisines = ['American', 'Chinese', 'Italian', 'Japanese'];
 
 
     this.getRestaurants = function() {
@@ -47,6 +46,10 @@ angular.module('myApp')
     };
 
     this.getRestaurants();
+
+    this.prevPage = function () {
+
+    }
 
     this.show = function(restaurant) {
       $state.go('restaurant-show', { id: restaurant._id });
