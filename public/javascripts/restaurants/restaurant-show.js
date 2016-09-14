@@ -81,7 +81,7 @@ angular.module('myApp')
 
 
     this.show = function(item) {
-      $state.go('item-show', { id: item._idn});
+      $state.go('item-show', { id: item._id});
     };
 
     this.edit = function() {
