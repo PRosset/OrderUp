@@ -32,6 +32,9 @@ angular.module('myApp')
     this.Auth = Auth;
     this.$state = $state;
 
+    console.log(Auth.getCurrentUserSync());
+
+
     this.logout = function() {
       this.Auth.logout()
       .then( res => {
