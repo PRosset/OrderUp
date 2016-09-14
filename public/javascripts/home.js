@@ -6,10 +6,9 @@ angular.module('myApp')
                           <div uib-slide ng-repeat ="slide in $ctrl.slides" index="slide.id">
                               <img ng-src="{{slide.image}}">
                               <div class="carousel-caption">
-                                <h3>Explore</h4>
+                                <h3>Explore</h3>
                              </div>
                           </div>
-                    </carousel>
                   </div>
   `,
         controller: function() {
