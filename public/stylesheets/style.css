@@ -369,4 +369,8 @@ main.ng-enter.ng-enter-active {
     .collapse.in{
       display:block !important;
   }
+
+  .developers {
+    width: 100px;
+  }
 }
