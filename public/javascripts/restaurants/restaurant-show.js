@@ -38,8 +38,7 @@ angular.module('myApp')
         </div>
         <div class="scrollMenu">
           <div class="items" ng-repeat="item in $ctrl.restaurantInfo.items | orderBy: 'category' | filter : $ctrl.search ">
-            <h4><a class="itemTitle" ng-if="$ctrl.checkOwner(restaurant)" ng-click="$ctrl.show(item)">{{ item.title }}</a>
-            <h4><p class="itemTitle" ng-if="!$ctrl.checkOwner(restaurant)">{{ item.title }}</p>
+            <h4><a class="itemTitle" ng-click="$ctrl.show(item)">{{ item.title }}</a>
               <button ng-if="$ctrl.checkOwner(restaurant)" ng-click="$ctrl.deleteItem(item)" class="btn btn-xs btn-danger">X</button>
             </h4>
             <p class="itemDescription">{{ item.description }}</p>
@@ -58,9 +57,6 @@ angular.module('myApp')
 
     this.sendCategory = function(category) {
      this.search = category;
-     console.log(category.id);
-     console.log('I fired');
-     console.log(this.search);
     };
 
 

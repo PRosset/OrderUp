@@ -47,10 +47,6 @@ angular.module('myApp')
 
     this.getRestaurants();
 
-    this.prevPage = function () {
-
-    }
-
     this.show = function(restaurant) {
       $state.go('restaurant-show', { id: restaurant._id });
     };
