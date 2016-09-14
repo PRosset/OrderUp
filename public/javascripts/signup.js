@@ -97,7 +97,7 @@ angular.module('myApp')
           password: this.user.password
         })
         .then(() => {
-          // Account created, redirect to todos
+          // Account created, redirect to restaurants
           $state.go('restaurants');
         })
         .catch(err => {
