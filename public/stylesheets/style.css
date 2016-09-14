@@ -69,12 +69,15 @@ footer {
 
 .restaurantDetails {
   background-color: #5D576B;
+  color: #fafafa;
   border-radius: 10px;
-  padding: 1%;
-  margin-top: 1em;
-  margin-bottom: 1em;
-  box-shadow: 2px 5px 15px 0px rgba(0,0,0,0.75);
+  margin-bottom: 20px;
+  margin-top: 20px;
+  border: 3px #273043 solid;
+  padding: 5px;
+  box-shadow: 2px 2px 5px 0px rgba(0,0,0,0.75);
 }
+
 .restaurantDetails p {
   color: #fafafa;
 }
@@ -85,6 +88,8 @@ footer {
   padding: 1%;
   margin-top: 1em;
 }
+
+
 
 .scrollMenu {
   height: 450px;

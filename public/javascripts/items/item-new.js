@@ -1,6 +1,7 @@
 angular.module('myApp')
 .component('itemNew', {
   template: `
+  <div class="col-md-10 col-md-offset-1">
     <h3>NEW MENU ITEM</h3>
     <form ng-submit="$ctrl.save()">
       <div class="form-group">
@@ -42,6 +43,7 @@ angular.module('myApp')
       <a ng-click="$ctrl.show($ctrl.item.restaurant)" class="btn btn-primary">Back</a>
       <button type="submit" class="btn btn-success">Save</button>
     </form>
+  </div>
   `,
   controller: function(itemService, $state) {
     this.categories = ['Appetizer', 'Entree', 'Sides', 'Desserts', 'Drinks'];

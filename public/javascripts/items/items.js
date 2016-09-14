@@ -1,6 +1,7 @@
 angular.module('myApp')
 .component('items', {
   template: `
+  <div class="col-md-10 col-md-offset-1">
     <h1>ITEMS</h1>
     <div class="items" ng-repeat = "item in $ctrl.items">
       <a ng-click="$ctrl.show(item)">{{ item.title }}</a>
@@ -8,6 +9,7 @@ angular.module('myApp')
     </div>
     <hr/>
     <a ui-sref="item-new" class="btn btn-primary">New</a>
+  </div>
   `,
   controller: function(itemService, $state) {
     this.item = null;
