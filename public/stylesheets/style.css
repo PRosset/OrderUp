@@ -125,7 +125,7 @@ uib-tabset.a.active {
   padding: 1%;
   margin-top: 1em;
   width: 85%;
-  height: 30%;
+  height: 35%;
   margin: 5px auto 0 auto;
   font-size: 75%;
   box-shadow: 2px 2px 5px 0px rgba(0,0,0,0.75);
@@ -135,7 +135,7 @@ uib-tabset.a.active {
   transform: scale(1.0);
   transition-duration: 500ms;
   width: 97% !important;
-  height: 37% !important;
+  height: 42% !important;
   border-radius: 10px;
   background-color: #DBDBD2;
   border: 3px solid #273043;
@@ -156,7 +156,7 @@ uib-tabset.a.active {
   box-shadow: 2px 2px 5px 0px rgba(0,0,0,0.75);
   }
 .categories {
-  padding: 20px 0;
+  padding: 10px 0;
   background-color: #5D576B;
   border-top-left-radius: 20px;
   border-top-right-radius: 20px;

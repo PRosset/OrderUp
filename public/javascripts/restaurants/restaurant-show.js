@@ -37,7 +37,7 @@ angular.module('myApp')
           <div class="items" ng-repeat="item in $ctrl.restaurantInfo.items | orderBy: 'category' | filter : $ctrl.search ">
             <h4><a class="itemTitle" ng-if="$ctrl.checkOwner(restaurant)" ng-click="$ctrl.show(item)">{{ item.title }}</a>
             <h4><p class="itemTitle" ng-if="!$ctrl.checkOwner(restaurant)">{{ item.title }}</p>
-              <button ng-if="$ctrl.checkOwner(restaurant)" ng-click="$ctrl.deleteItem(item)" class="btn btn-xs btn-danger">X</button>
+            <button ng-if="$ctrl.checkOwner(restaurant)" ng-click="$ctrl.deleteItem(item)" class="itemDelete btn btn-xs btn-danger">X</button>
             </h4>
             <p id="descriptHide" class="itemDescription">{{ item.description }}</p>
             <p class="itemDescription">{{ item.price | currency}}</p>
