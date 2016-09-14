@@ -51,7 +51,25 @@ angular.module('myApp')
   controller: function(restaurantService, Auth, $state, $stateParams) {
     this.restaurant = null;
     // this.categories = ['Appetizer', 'Entree', 'Sides', 'Desserts', 'Drinks'];
-    this.categories = [ {title: "Full Menu", searchParam: ''}, { title: 'Appetizers', searchParam: 'appetizer'}, { title: 'Entrees', searchParam: 'entree'},  { title: 'Sides', searchParam: 'sides'}, { title: 'Desserts', searchParam: 'desserts'}, { title: 'Drinks', searchParam: 'drinks'}];
+    this.categories = [ {
+                        title: "Full Menu",
+                        searchParam: ''
+                      }, {
+                        title: 'Appetizers',
+                        searchParam: 'appetizer'
+                      }, {
+                        title: 'Entrees',
+                        searchParam: 'entree'
+                      }, {
+                        title: 'Sides',
+                        searchParam: 'sides'
+                      }, {
+                        title: 'Desserts',
+                        searchParam: 'desserts'
+                      }, {
+                        title: 'Drinks',
+                        searchParam: 'drinks'
+                      } ];
     this.activeItemId = 0;
 
     this.sendCategory = function(category) {
@@ -63,7 +81,7 @@ angular.module('myApp')
 
 
     this.show = function(item) {
-      $state.go('item-show', { id: item._idn});
+      $state.go('item-show', { id: item._id});
     };
 
     this.edit = function() {
@@ -90,11 +108,8 @@ angular.module('myApp')
     };
   }
 });
-
-
-
-    // <div class="categories col-xs-6 col-md-offset-3">
-    //   <uib-tabset type="pills" active="activeItemId" ng-model="$ctrl.item.category" ng-repeat="category in $ctrl.categories">
-    //     <uib-tab heading="{{category}}" ng-click="$ctrl.sendCategory(category)"></uib-tab>
-    //   </uib-tabset>
-    // </div>
+// <div class="categories col-xs-6 col-md-offset-3">
+//   <uib-tabset type="pills" active="activeItemId" ng-model="$ctrl.item.category" ng-repeat="category in $ctrl.categories">
+//     <uib-tab heading="{{category}}" ng-click="$ctrl.sendCategory(category)"></uib-tab>
+//   </uib-tabset>
+// </div>

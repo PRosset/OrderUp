@@ -16,8 +16,6 @@ var usersRouter = require('./routes/users');
 var itemsRouter = require('./routes/items');
 var restaurantRouter = require('./routes/restaurant');
 
-var todosRouter = require('./routes/todos');
-
 var app = express();
 
 // Connect to database
@@ -61,7 +59,6 @@ require('./config/passport/passport')(passport);
 app.use(express.static(path.join(__dirname, 'public')));
 app.use('/', homeRouter);
 app.use('/users', usersRouter);
-app.use('/todos', todosRouter);
 app.use('/items', itemsRouter);
 app.use('/restaurants', restaurantRouter);
 
