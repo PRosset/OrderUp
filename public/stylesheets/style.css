@@ -102,7 +102,7 @@ footer {
   border-radius: 10px;
   margin-bottom: 20px;
   margin-top: 20px;
-  border: 3px #273043 solid;
+  border: 3px #6b88ff solid;
   padding: 5px;
   box-shadow: 2px 2px 5px 0px rgba(0,0,0,0.75);
 }
@@ -150,13 +150,20 @@ uib-tabset.a.active {
   overflow-y: scroll;
   border-bottom-left-radius: 20px;
   border-bottom-right-radius: 20px;
-
-}
+  border-bottom: 3px solid #6b88ff;
+  border-right: 3px solid #6b88ff;
+  border-left: 3px solid #6b88ff;
+  box-shadow: 2px 2px 5px 0px rgba(0,0,0,0.75);
+  }
 .categories {
   padding: 20px 0;
   background-color: #5D576B;
   border-top-left-radius: 20px;
   border-top-right-radius: 20px;
+  border-top: 3px solid #6b88ff;
+  border-left: 3px solid #6b88ff;
+  border-right: 3px solid #6b88ff;
+  box-shadow: 2px 0px 5px 0px rgba(0,0,0,0.75);
 }
 
 h3 {
