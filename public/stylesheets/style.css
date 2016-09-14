@@ -1,4 +1,5 @@
 body {
+    margin-top: 50px;
     font: 14px 'Poppins', sans-serif;
     background-color: #B5DFCA;
 }
@@ -41,16 +42,56 @@ footer {
     background-color: red;
 }
 
+.aboutHeader {
+  font-size: 30px;
+}
+
+.developers {
+  background-color: #FBFBF2;
+  border: 3px solid #273043;
+  border-radius: 10px;
+  box-shadow: 2px 5px 15px 0px rgba(0,0,0,0.75);
+  margin-bottom: 20px;
+}
+
+.dev {
+  margin-top: 40px;
+}
+
+.devPic {
+  max-height: 200px;
+  width: auto;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  border-radius: 30px;
+  border: 3px solid #273043;
+}
+
+.email {
+  font-size:
+}
+
 .restaurantDetails {
   background-color: #5D576B;
+  color: #fafafa;
   border-radius: 10px;
-  padding: 1%;
-  margin-top: 1em;
-  margin-bottom: 1em;
-  box-shadow: 2px 5px 15px 0px rgba(0,0,0,0.75);
+  margin-bottom: 20px;
+  margin-top: 20px;
+  border: 3px #6b88ff solid;
+  padding: 5px;
+  box-shadow: 2px 2px 5px 0px rgba(0,0,0,0.75);
 }
+
 .restaurantDetails p {
   color: #fafafa;
+}
+
+.pillButton {
+  border-radius: 5px;
+}
+
+uib-tabset.a.active {
+  color: black;
 }
 
 .items {
@@ -58,8 +99,46 @@ footer {
   border-radius: 10px;
   padding: 1%;
   margin-top: 1em;
-  overflow-y: scroll;
+  width: 85%;
+  height: 30%;
+  margin: 5px auto 0 auto;
+  font-size: 75%;
+  box-shadow: 2px 2px 5px 0px rgba(0,0,0,0.75);
+}
 
+.items:hover {
+  transform: scale(1.0);
+  transition-duration: 500ms;
+  width: 97% !important;
+  height: 37% !important;
+  border-radius: 10px;
+  background-color: #DBDBD2;
+  border: 3px solid #273043;
+  font-color: solid black;
+  font-size: 100%;
+}
+
+
+.scrollMenu {
+  height: 55vh;
+  background-color: #5D576B;
+  overflow-y: scroll;
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+  border-bottom: 3px solid #6b88ff;
+  border-right: 3px solid #6b88ff;
+  border-left: 3px solid #6b88ff;
+  box-shadow: 2px 2px 5px 0px rgba(0,0,0,0.75);
+  }
+.categories {
+  padding: 20px 0;
+  background-color: #5D576B;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+  border-top: 3px solid #6b88ff;
+  border-left: 3px solid #6b88ff;
+  border-right: 3px solid #6b88ff;
+  box-shadow: 2px 0px 5px 0px rgba(0,0,0,0.75);
 }
 
 h3 {
@@ -81,33 +160,83 @@ a.itemTitle:hover {
 }
 
 p.itemDescription {
-    color: #8693AB;
+    color: solid black;
 }
 
 .navbar-default {
-    background: #273043;
-    border-color: #FBFBF2;
+  background: #273043;
+  border-top: 3px solid #6B7FD7;
+  border-bottom: 3px solid #6B7FD7;
+}
+
+ul.nav li.active a {
+    color: white !important;
 }
 
 .navbar-default a {
+  color: #FBFBF2;
+}
+
+.nav.navbar-nav.navbar-right {
+  margin-right: 5px;
+}
+
+.navbar.navbar-fixed-top.navbar-default li a {
+  color: #FBFBF2;
+}
+
+.navbar.navbar-fixed-top.navbar-default li {
+  color: #FBFBF2;
+}
+
+.navbar.navbar-fixed-top.navbar-default p {
+  color: #FBFBF2;
+}
+
+.navbar-brand {
+    position: absolute;
+    width: 100%;
+    text-align: center;
+    margin:0 auto;
+    z-index: -1 !important;
+}
+
+p.navbar-brand.orderUp{
+  color: #FBFBF2;
+  font-size: 25px;
+}
+
+.orderUp {
+  font-family: 'Pacifico', cursive;
   color: white;
 }
 
 .restaurants {
-  background-color: #FBFBF2;
+  background-color: #5D576B;
+  color: #fafafa;
   border-radius: 10px;
   margin-bottom: 20px;
-  border: 3px #5D576B solid;
+  margin-top: 20px;
+  border: 3px #273043 solid;
+  padding: 0;
   box-shadow: 2px 2px 5px 0px rgba(0,0,0,0.75);
 }
 
 .restaurants:hover {
-  background-color: #fafafa;
-  border-color: #6B7FD7;
-  color: #6B7FD7;
+  background-color: #273043;
+  border-color: #6b88ff;
 
 }
-
+.cover {
+  background-color: rgba(0,0,0,.35);
+  background-size: 100% 100%;
+  border-radius: 6px;
+  width: 100%;
+  height: 100%;
+}
+.restaurantInfo {
+  padding-left: 10px;
+}
 .menuItems {
     padding-top: 10px;
 }
@@ -116,10 +245,12 @@ p.itemDescription {
     margin: 5px;
 }
 
+.restaurantDetails hr {
+  margin: 5px;
+}
 .restaurantName {
     font-size: 2em;
     font-weight: 800;
-    margin: 3px 0 0 0;
 }
 
 .deleteBtn {
@@ -210,3 +341,43 @@ main.ng-enter.ng-enter-active {
   text-align: center;
 }
 
+@media only screen and (max-width: 768px) {
+  .navbar-header {
+        float: none;
+    }
+    .navbar-left,.navbar-right {
+        float: none !important;
+    }
+    .navbar-toggle {
+        display: block;
+    }
+    .navbar-collapse {
+        border-top: 1px solid transparent;
+        box-shadow: inset 0 1px 0 rgba(255,255,255,0.1);
+    }
+    .navbar-fixed-top {
+    top: 0;
+    border-width: 0 0 1px;
+  }
+    .navbar-collapse.collapse {
+        display: none!important;
+    }
+    .navbar-nav {
+        float: none!important;
+    margin-top: 7.5px;
+  }
+  .navbar-nav>li {
+        float: none;
+    }
+    .navbar-nav>li>a {
+        padding-top: 10px;
+        padding-bottom: 10px;
+    }
+    .collapse.in{
+      display:block !important;
+  }
+
+  .developers {
+    width: 100px;
+  }
+}

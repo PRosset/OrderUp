@@ -1,6 +1,7 @@
 angular.module('myApp')
 .component('itemShow', {
   template: `
+  <div class="col-md-10 col-md-offset-1">
     <h3>Menu Item Information</h3>
     <div class="itemShow">
       <p class="itemTitle">{{ $ctrl.item.title }}</p>
@@ -11,7 +12,7 @@ angular.module('myApp')
 
       <a ng-click="$ctrl.back(item)" class="btn btn-primary">Back</a>
       <a ng-click="$ctrl.edit(item)" class="btn btn-warning">Edit</a>
-
+  </div>
   `,
   controller: function(itemService, $state, $stateParams) {
     this.item = null;

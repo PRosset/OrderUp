@@ -24,8 +24,5 @@ angular.module('myApp')
                 { image: 'https://hd.unsplash.com/photo-1464500422302-6188776dcbf3', id: 4 },
                 { image: 'https://images.unsplash.com/photo-1473213110592-19430a217c0e?ixlib=rb-0.3.5&q=80&fm=jpg&crop=entropy&cs=tinysrgb&s=a7eb87f1caa636482e261d93ea062fb0', id: 5 }
             ];
-
         }
-
-
     });

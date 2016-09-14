@@ -21,8 +21,6 @@ angular.module('myApp')
     return $http.delete('/restaurants/' + restaurant._id);
   };
 
-
-
   this.getItems = function() {
     return $http.get('/items');
   };

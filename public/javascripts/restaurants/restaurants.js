@@ -10,16 +10,21 @@ angular.module('myApp')
     <br>
     <div id="restaurantList" class="row">
       <div class="col-md-9 col-md-offset-1">
-        <div class="restaurants col-md-5 col-md-offset-1" ng-click="$ctrl.show(restaurant)" ng-repeat="restaurant in $ctrl.restaurants | filter: search">
-          <p class="restaurantName">{{ restaurant.title }}</p>
-          <hr/>
-          <button ng-if="$ctrl.checkOwner(restaurant)" ng-click="$ctrl.delete(restaurant)" class="deleteBtn btn btn-xs btn-danger">X</button>
-          <p class="restaurantAddress">{{ restaurant.address }}</p>
-          <p><b>Hours: </b>{{ restaurant.hours }}</p>
-          <p>{{ restaurant.phone }}</p>
+        <div class="restaurants col-md-5 col-md-offset-1" ng-click="$ctrl.show(restaurant)" ng-repeat="restaurant in $ctrl.restaurants | filter: search" style="background-image: url({{restaurant.image}}); background-size: 100%; background-color: rgba(0,0,0,.5);">
+          <div class="cover">
+            <div class="restaurantInfo">
+              <p class="restaurantName">{{ restaurant.title }}</p>
+              <hr/>
+              <button ng-if="$ctrl.checkOwner(restaurant)" ng-click="$ctrl.delete(restaurant)" class="deleteBtn btn btn-xs btn-danger">X</button>
+              <p class="restaurantAddress">{{ restaurant.address }}</p>
+              <p><b>Hours: </b>{{ restaurant.hours }}</p>
+              <p>{{ restaurant.phone }}</p>
+            </div>
+          </div>
         </div>
       </div>
     </div>
+
     <br>
     <br>
     <br>
@@ -29,28 +34,18 @@ angular.module('myApp')
   </div>
   `,
   controller: function(restaurantService, Auth, $state) {
-    this.restaurants = null;
-    this.cuisines = ['American', 'Chinese', 'Italian', 'Japanese'];
+    this.restaurants = [];
+    // this.cuisines = ['American', 'Chinese', 'Italian', 'Japanese'];
 
-    // this.pagination = {
-    //       currentPage: 1,
-    //       maxSize: 21
-    //   };
 
     this.getRestaurants = function() {
       restaurantService.getRestaurants()
       .then( res => {
         this.restaurants = res.data;
-        // this.pagination.totalItems = this.restaurants.length;
-
       });
     };
 
     this.getRestaurants();
-
-    // this.pageChanged = function() {
-    //   console.log('Page changed to: ' + this.currentPage);
-    // };
 
     this.show = function(restaurant) {
       $state.go('restaurant-show', { id: restaurant._id });
@@ -67,4 +62,3 @@ angular.module('myApp')
     };
   }
 });
-

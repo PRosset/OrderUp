@@ -1,9 +1,13 @@
 {
   "name": "mean-stack-starter-app",
   "version": "0.0.0",
+  "engines": {
+    "node": "6.3.1"
+  },
   "private": true,
   "scripts": {
-    "start": "nodemon ./bin/www"
+    "start": "node ./bin/www",
+    "dev": "nodemon ./bin/www"
   },
   "dependencies": {
     "bcrypt-nodejs": "0.0.3",

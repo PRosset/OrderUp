@@ -75,6 +75,8 @@ angular.module('myApp')
             <button class="btn btn-default btn-lg btn-register" type="submit">
               Sign up
             </button>
+            <br>
+            <br>
             <p>Already have an account?  Sign in <a ui-sref="login">here</a>.</p>
           </div>
         </form>
@@ -95,7 +97,7 @@ angular.module('myApp')
           password: this.user.password
         })
         .then(() => {
-          // Account created, redirect to todos
+          // Account created, redirect to restaurants
           $state.go('restaurants');
         })
         .catch(err => {
