@@ -61,4 +61,9 @@ angular.module('myApp')
     template: "<item-new></item-new>"
   });
 
+})
+.filter('startFrom', function() {
+  return function(data, start) {
+    return data.slice(start);
+  }
 });

@@ -34,7 +34,7 @@ angular.module('myApp')
           </div>
         </div>
         <div class="scrollMenu">
-          <div class="items" ng-repeat="item in $ctrl.restaurantInfo.items | orderBy: 'category' | filter : $ctrl.search ">
+          <div class="items" ng-repeat="item in $ctrl.restaurantInfo.items | orderBy: 'category' | filter : $ctrl.search | startFrom:(currentPage - 1) * pageSize|limitTo: pageSize ">
             <h4><a class="itemTitle" ng-if="$ctrl.checkOwner(restaurant)" ng-click="$ctrl.show(item)">{{ item.title }}</a>
             <h4><p class="itemTitle" ng-if="!$ctrl.checkOwner(restaurant)">{{ item.title }}</p>
             <button ng-if="$ctrl.checkOwner(restaurant)" ng-click="$ctrl.deleteItem(item)" class="itemDelete btn btn-xs btn-danger">X</button>

@@ -10,7 +10,7 @@ angular.module('myApp')
     <br>
     <div id="restaurantList" class="row">
       <div class="col-md-9 col-md-offset-1">
-        <div class="restaurants col-md-5 col-md-offset-1" ng-click="$ctrl.show(restaurant)" ng-repeat="restaurant in $ctrl.restaurants | filter: search" style="background-image: url({{restaurant.image}}); background-size: 100%; background-color: rgba(0,0,0,.5);">
+        <div class="restaurants col-md-5 col-md-offset-1" ng-click="$ctrl.show(restaurant)" ng-repeat="restaurant in $ctrl.restaurants | filter: search | startFrom: ($ctrl.currentPage - 1) * $ctrl.pageSize | limitTo: $ctrl.pageSize" style="background-image: url({{restaurant.image}}); background-size: 100%; background-color: rgba(0,0,0,.5);">
           <div class="cover">
             <div class="restaurantInfo">
               <p class="restaurantName">{{ restaurant.title }}</p>
@@ -25,6 +25,7 @@ angular.module('myApp')
       </div>
     </div>
 
+    <ul uib-pagination total-items="$ctrl.restaurants.length" ng-model="$ctrl.currentPage" items-per-page="$ctrl.pageSize"></ul uib-pagination>
     <br>
     <br>
     <br>
@@ -37,6 +38,8 @@ angular.module('myApp')
     this.restaurants = [];
     // this.cuisines = ['American', 'Chinese', 'Italian', 'Japanese'];
 
+    this.pageSize = 4;
+    this.currentPage = 1;
 
     this.getRestaurants = function() {
       restaurantService.getRestaurants()
