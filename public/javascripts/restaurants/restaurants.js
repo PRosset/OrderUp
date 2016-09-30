@@ -24,8 +24,9 @@ angular.module('myApp')
         </div>
       </div>
     </div>
-
-    <ul uib-pagination total-items="$ctrl.restaurants.length" ng-model="$ctrl.currentPage" items-per-page="$ctrl.pageSize"></ul uib-pagination>
+    <div class="col-sm-4 col-sm-offset-5 input-sm">
+      <ul uib-pagination total-items="$ctrl.restaurants.length" ng-model="$ctrl.currentPage" items-per-page="$ctrl.pageSize"></ul uib-pagination>
+    </div>
     <br>
     <br>
     <br>
@@ -38,7 +39,7 @@ angular.module('myApp')
     this.restaurants = [];
     // this.cuisines = ['American', 'Chinese', 'Italian', 'Japanese'];
 
-    this.pageSize = 4;
+    this.pageSize = 6;
     this.currentPage = 1;
 
     this.getRestaurants = function() {

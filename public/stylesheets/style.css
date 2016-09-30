@@ -292,12 +292,17 @@ main.ng-enter.ng-enter-active {
   opacity: 0;
 }
 
+.pagination {
+  margin-bottom: 100px;
+}
+
 .footer {
     background-color: #6B7FD7;
     color: white;
     text-align: right;
     padding: 10px 20px 10px 10px;
     font-size: 15px;
+    margin-top: 100px;
 }
 
 .items.ng-enter {
