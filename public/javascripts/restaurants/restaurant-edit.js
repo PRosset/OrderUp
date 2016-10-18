@@ -24,6 +24,14 @@ angular.module('myApp')
         </div>
 
         <div class="form-group">
+          <label for="image">Image</label>
+            <input type="text"
+                    class="form-control"
+                    name="image"
+                    ng-model="$ctrl.restaurantInfo.restaurant.image">
+        </div>
+
+        <div class="form-group">
           <label for="title">Address</label>
           <input type="text"
                  class="form-control"

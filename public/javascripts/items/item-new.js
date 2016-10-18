@@ -46,7 +46,7 @@ angular.module('myApp')
   </div>
   `,
   controller: function(itemService, $state) {
-    this.categories = ['Appetizer', 'Entree', 'Sides', 'Desserts', 'Drinks'];
+    this.categories = ['Appetizers', 'Entrees', 'Sides', 'Desserts', 'Drinks'];
 
     this.item = {
       title: '',
