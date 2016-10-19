@@ -18,7 +18,6 @@ angular.module('myApp')
         <div class="upperRestaurantDetails" style="background-image: url({{$ctrl.restaurantInfo.restaurant.image}});">
           <h3 style="color: #fafafa !important; text-shadow: -1px 0 #000000,0 1px #000000,1px 0 #000000,0 -1px #000000;">{{ $ctrl.restaurantInfo.restaurant.title }}</h3>
         </div>
-        <hr />
         <div class="lowerRestaurantDetails">
           <p><b>Cuisine: </b>{{ $ctrl.restaurantInfo.restaurant.cuisine }}</p>
           <p><b>Address: </b>{{ $ctrl.restaurantInfo.restaurant.address }}</p>
