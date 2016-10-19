@@ -40,7 +40,8 @@ router.post('/', authenticate, function(req, res, next) {
     cuisine: req.body.cuisine,
     address: req.body.address,
     phone: req.body.phone,
-    hours: req.body.hours
+    hours: req.body.hours,
+    image: req.body.image
   });
   restaurant.save()
   .then(function(saved) {
@@ -80,6 +81,7 @@ router.put('/:id', authenticate, function(req, res, next) {
     restaurant.address = req.body.address;
     restaurant.phone = req.body.phone;
     restaurant.hours = req.body.hours;
+    restaurant.image = req.body.image;
     return restaurant.save();
   })
   .then(function(restaurant) {
