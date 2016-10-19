@@ -14,13 +14,17 @@ angular.module('myApp')
     </div>
 
     <div class="row">
-      <div class="restaurantDetails col-md-3">
-        <h3>{{ $ctrl.restaurantInfo.restaurant.title }}</h3>
-        <hr/>
-        <p><b>Cuisine: </b>{{ $ctrl.restaurantInfo.restaurant.cuisine }}</p>
-        <p><b>Address: </b>{{ $ctrl.restaurantInfo.restaurant.address }}</p>
-        <p><b>Phone: </b>{{ $ctrl.restaurantInfo.restaurant.phone }}</p>
-        <p><b>Hours: </b>{{ $ctrl.restaurantInfo.restaurant.hours }}</p>
+      <div class="restaurantDetails col-md-3" style="padding: 0px;">
+        <div class="upperRestaurantDetails" style="background-image: url({{$ctrl.restaurantInfo.restaurant.image}});">
+          <h3 style="color: #fafafa !important; text-shadow: -1px 0 #000000,0 1px #000000,1px 0 #000000,0 -1px #000000;">{{ $ctrl.restaurantInfo.restaurant.title }}</h3>
+        </div>
+        <hr />
+        <div class="lowerRestaurantDetails">
+          <p><b>Cuisine: </b>{{ $ctrl.restaurantInfo.restaurant.cuisine }}</p>
+          <p><b>Address: </b>{{ $ctrl.restaurantInfo.restaurant.address }}</p>
+          <p><b>Phone: </b>{{ $ctrl.restaurantInfo.restaurant.phone }}</p>
+          <p><b>Hours: </b>{{ $ctrl.restaurantInfo.restaurant.hours }}</p>
+        </div>
       </div>
 
       <div class="menuItems col-md-8 col-md-offset-1">
