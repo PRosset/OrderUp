@@ -84,7 +84,8 @@ footer {
 .upperRestaurantDetails {
   background-size: 100%;
   min-height: 100%;
-  background-position: 50% 50%;
+  background-size: cover;
+  /*background-position: 50% 50%;*/
   background-color: rgba(0,0,0,.5);
   border: 3px #6b88ff solid;
   border-radius: 10px;
